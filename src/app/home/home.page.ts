@@ -27,4 +27,10 @@ export class HomePage {
     localStorage.removeItem('ingresado');
     this.navCtrl.navigateRoot('login');
   }
+
+  color(){
+    document.getElementById('titulo').style.background="blue";
+    document.getElementById('titulo').style.color="red";
+
+  }
 }

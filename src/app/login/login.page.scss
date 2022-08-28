@@ -1,13 +1,16 @@
 .body{
     background-color: red;
-}i
-
-ion-item{
-    border-radius: 15px;
 }
 
-ion-card-title{
-    color: aqua;
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+ion-card-title,ion-title{
+    font-family: 'DynaPuff', cursive;
+    -webkit-text-stroke: 0.5px rgba(0, 140, 255, 0.962);   
+    font-size: 30px; 
+}
+ion-item{
+    border-radius: 35px;
+    padding: 5px;
 }
 
 ion-card{
