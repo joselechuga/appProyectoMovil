@@ -1,6 +1,7 @@
 
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 
 @Component({
@@ -11,7 +12,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class HomePage {
   data: any; 
 
-  constructor(private activeroute: ActivatedRoute, private router: Router) {
+  constructor(private activeroute: ActivatedRoute,
+     private router: Router,
+     public navCtrl : NavController) {
    
     this.activeroute.queryParams.subscribe(params => { 
       if (this.router.getCurrentNavigation().extras.state) { 
@@ -19,5 +22,16 @@ export class HomePage {
         console.log(this.data) 
       }else{this.router.navigate(["/login"])} 
     });
+  }
+  salir(){
+    localStorage.removeItem('ingresado');
+    this.navCtrl.navigateRoot('login');
+    console.log('f');
+  }
+
+  color(){
+    document.getElementById('titulo').style.background="blue";
+    document.getElementById('titulo').style.color="red";
+
   }
 }

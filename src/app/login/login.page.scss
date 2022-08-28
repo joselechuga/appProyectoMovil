@@ -1,0 +1,18 @@
+.body{
+    background-color: red;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+ion-card-title,ion-title{
+    font-family: 'DynaPuff', cursive;
+    -webkit-text-stroke: 0.5px rgba(0, 140, 255, 0.962);   
+    font-size: 30px; 
+}
+ion-item{
+    border-radius: 35px;
+    padding: 5px;
+}
+
+ion-card{
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
