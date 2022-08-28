@@ -26,6 +26,7 @@ export class HomePage {
   salir(){
     localStorage.removeItem('ingresado');
     this.navCtrl.navigateRoot('login');
+    console.log('f');
   }
 
   color(){
