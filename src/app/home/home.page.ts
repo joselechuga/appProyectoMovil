@@ -34,4 +34,8 @@ export class HomePage {
     document.getElementById('titulo').style.color="red";
 
   }
+
+  irtienda(){
+    this.router.navigate(['/producto'])
+  }
 }
