@@ -10,7 +10,15 @@
 </ion-header>
  
 <ion-content>
-  <div class="ion-padding">
-    <p>bienvenido a la tienda JOJO mas confiable mas para ti</p>
-  </div>
+
+  <ion-row>
+    <ion-col sizeLg="6" sizeMd="6" sizeXs="12" *ngFor=" let productos of producto">
+      <ion-card>
+        <img src="../../assets/producto-imagen/{{productos.imagen}}">
+        <div class="card-title">{{productos.name}}</div>
+      </ion-card>
+
+    </ion-col>
+  </ion-row>
+
 </ion-content>
