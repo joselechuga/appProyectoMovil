@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(public navCtrl: NavController) {}
+
+
+  salir(){
+    localStorage.removeItem('ingresado');
+    this.navCtrl.navigateRoot('login');
+    console.log('f');
+  }
 }
+

@@ -23,17 +23,8 @@ export class HomePage {
       }else{this.router.navigate(["/login"])} 
     });
   }
-  salir(){
-    localStorage.removeItem('ingresado');
-    this.navCtrl.navigateRoot('login');
-    console.log('f');
-  }
 
-  color(){
-    document.getElementById('titulo').style.background="blue";
-    document.getElementById('titulo').style.color="red";
 
-  }
 
   irtienda(){
     this.router.navigate(['/producto'])

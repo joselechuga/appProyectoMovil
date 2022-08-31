@@ -16,6 +16,7 @@ export class RegistroPage implements OnInit {
     public navCtrl: NavController ) {
 
     this.formularioRegistro= this.fb.group({
+      'rialname':new FormControl("",Validators.required),
       'nombre': new FormControl("",Validators.required),
       'password': new FormControl("",Validators.required),
       'confirmacionPassword': new FormControl("",Validators.required),
@@ -42,6 +43,7 @@ export class RegistroPage implements OnInit {
     }
 
     var usuario = {
+      rialname: f.rialname,
       nombre: f.nombre,
       password: f.password,
       conPassword : f.confirmacionPassword
