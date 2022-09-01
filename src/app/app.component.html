@@ -15,16 +15,16 @@
                 Producto
               </ion-label>
             </ion-item>
-            <ion-item [routerDirection]="'root'" [routerLink]="'/home'">
-              <ion-icon slot="start" [name]="'home'"></ion-icon>
+            <ion-item [routerDirection]="'root'" [routerLink]="'/perfil'">
+              <ion-icon slot="start" [name]="'person-outline'"></ion-icon>
               <ion-label>
-                Inicio
+                Perfil
               </ion-label>
             </ion-item>
-            <ion-item (click)="salir()" [routerDirection]="'root'">
-              <ion-icon slot="start" [name]="'home'"></ion-icon>
+            <ion-item (click)="salir()" [routerDirection]="'home'" [routerLink]="'/login'">
+              <ion-icon slot="start" name="log-out-outline"></ion-icon>
               <ion-label>
-                Cerrar sesion
+                Producto
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
