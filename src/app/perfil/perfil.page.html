@@ -1,18 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>perfil</ion-title>
+    <ion-title class="titulo">Perfil </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-buttton (click)="mostrar()">MOSTRAR</ion-buttton>
+  <ion-card>
+    <ion-card-conten>
+      <ion-card-item>
+        <ion-buttton (click)="mostrar()">Usuario</ion-buttton>
+  
 
-  <div id="contenedor">
-    <p></p>
-  </div>
-
-  <div class="square"></div>
-  <button id="play">Play</button>
-  <button id="pause">Pause</button>
-  <button id="stop">Stop</button>
+        <div class="square"></div>
+        <button id="play">Play</button>
+        <button id="pause">Pause</button>
+        <button id="stop">Stop</button>
+      </ion-card-item>
+    </ion-card-conten>
+  </ion-card>
 </ion-content>

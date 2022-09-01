@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { createAnimation, NavController } from '@ionic/angular';
 @Component({
   selector: 'app-perfil',
@@ -7,8 +8,19 @@ import { createAnimation, NavController } from '@ionic/angular';
 })
 export class PerfilPage implements OnInit {
 
-  constructor(public navCtrl:NavController) { }
-    
+  data: any;
+
+  constructor(public navCtrl:NavController,private activeroute: ActivatedRoute,
+    private router: Router,) { 
+
+      this.activeroute.queryParams.subscribe(params => { 
+        if (this.router.getCurrentNavigation().extras.state) { 
+          this.data = this.router.getCurrentNavigation().extras.state.user;
+          console.log(this.data) 
+        }else{this.router.navigate(["perfil"])} 
+      });
+  }
+  
 
   mostrar(){
     var usuario = JSON.parse(localStorage.getItem('usuario'));
@@ -20,6 +32,7 @@ export class PerfilPage implements OnInit {
       //console.log(usuario[user]);
     }
     console.log(datosUsuario[1]);
+    
     
     
     /** opcion de obtencion de datos
@@ -51,5 +64,6 @@ document.querySelector('#stop').addEventListener('click', () => {
   animation.stop();
 });
   }
+  
 
 }
