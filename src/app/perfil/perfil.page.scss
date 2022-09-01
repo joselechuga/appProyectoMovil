@@ -1,0 +1,21 @@
+.a{
+    color: blue;
+    background-color: aqua;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    opacity: 0.5;
+    background: blue;
+    margin: 10px;
+    
+    --background: red;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .square {
+      --background: green;
+    }
+  }
+  
