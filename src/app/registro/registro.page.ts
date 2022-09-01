@@ -46,10 +46,10 @@ export class RegistroPage implements OnInit {
       rialname: f.rialname,
       nombre: f.nombre,
       password: f.password,
-      conPassword : f.confirmacionPassword
+      confirmacionPassword : f.confirmacionPassword
     }
 
-    if(usuario.password != usuario.conPassword){
+    if(usuario.password != usuario.confirmacionPassword){
       console.log('distinta');
       const alert = await this.alertController.create({
         header: 'La contraseña no coincide!',
