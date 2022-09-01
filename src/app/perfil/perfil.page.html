@@ -8,14 +8,25 @@
   <ion-card>
     <ion-card-conten>
       <ion-card-item>
-        <ion-buttton (click)="mostrar()">Usuario</ion-buttton>
+      <ion-buttton class="botonmostrarnombre" (click)="mostrar()">Usuario</ion-buttton>
   
 
         <div class="square"></div>
-        <button id="play">Play</button>
-        <button id="pause">Pause</button>
-        <button id="stop">Stop</button>
+        <div class="botones">
+        <button id="play">Correr animacion</button>
+        <button id="pause">Pausar animacion</button>
+        <button id="stop">Detener animacion</button>
+        </div>
       </ion-card-item>
     </ion-card-conten>
   </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-card-item>
+        <img src="assets/fondos/JOJOS.png" alt="">
+      </ion-card-item>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
