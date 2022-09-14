@@ -10,6 +10,8 @@ export class PerfilPage implements OnInit {
 
   data: any;
 
+  usuario = JSON.parse(localStorage.getItem('usuario'));
+
   constructor(public navCtrl:NavController,private activeroute: ActivatedRoute,
     private router: Router,) { 
 
