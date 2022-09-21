@@ -10,6 +10,7 @@ export class PerfilPage implements OnInit {
 
   data: any;
 
+  //se declara una variable que obtiene los datos del registro y lo podemos trabajar como una lista
   usuario = JSON.parse(localStorage.getItem('usuario'));
 
   constructor(public navCtrl:NavController,private activeroute: ActivatedRoute,
@@ -24,26 +25,26 @@ export class PerfilPage implements OnInit {
   }
   
 
-  mostrar(){
-    var usuario = JSON.parse(localStorage.getItem('usuario'));
+//   mostrar(){
+//     var usuario = JSON.parse(localStorage.getItem('usuario'));
 
-    let datosUsuario = [{}];
+//     let datosUsuario = [{}];
 
-    for(var user in usuario){
-      datosUsuario.push(usuario[user]);
-      //console.log(usuario[user]);
-    }
-    console.log(datosUsuario[1]);
+//     for(var user in usuario){
+//       datosUsuario.push(usuario[user]);
+//       //console.log(usuario[user]);
+//     }
+//     console.log(datosUsuario[1]);
     
     
     
-    /** opcion de obtencion de datos
-    var a = {
-      b : datosUsuario[1]
-    }
-    console.log(a);
- */
-  }
+//     /** opcion de obtencion de datos
+//     var a = {
+//       b : datosUsuario[1]
+//     }
+//     console.log(a);
+//  */
+//   }
 
 
   ngOnInit() {
