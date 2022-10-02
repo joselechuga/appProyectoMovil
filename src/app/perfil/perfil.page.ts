@@ -7,28 +7,10 @@ import { createAnimation, NavController } from '@ionic/angular';
 })
 export class PerfilPage implements OnInit {
 
+  usuario = JSON.parse(localStorage.getItem('usuario'));
+
   constructor(public navCtrl:NavController) { }
     
-
-  mostrar(){
-    var usuario = JSON.parse(localStorage.getItem('usuario'));
-
-    let datosUsuario = [{}];
-
-    for(var user in usuario){
-      datosUsuario.push(usuario[user]);
-      //console.log(usuario[user]);
-    }
-    console.log(datosUsuario[1]);
-    
-    
-    /** opcion de obtencion de datos
-    var a = {
-      b : datosUsuario[1]
-    }
-    console.log(a);
- */
-  }
 
 
   ngOnInit() {
@@ -39,17 +21,17 @@ export class PerfilPage implements OnInit {
    .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
    .fromTo('opacity', '1', '0.2');
 
-document.querySelector('#play').addEventListener('click', () => {
-  animation.play();
-});
+  document.querySelector('#play').addEventListener('click', () => {
+    animation.play();
+  });
 
-document.querySelector('#pause').addEventListener('click', () => {
-  animation.pause();
-});
+  document.querySelector('#pause').addEventListener('click', () => {
+    animation.pause();
+  });
 
-document.querySelector('#stop').addEventListener('click', () => {
-  animation.stop();
-});
-  }
+  document.querySelector('#stop').addEventListener('click', () => {
+    animation.stop();
+  });
+}
 
 }

@@ -1,18 +1,35 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>perfil</ion-title>
+    <ion-back-button></ion-back-button>
+    <ion-title class="titulo">Perfil </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-buttton (click)="mostrar()">MOSTRAR</ion-buttton>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-item>
+     
+        <h3>
+          Usuario: {{usuario.rialname}}
+        </h3>
 
-  <div id="contenedor">
-    <p></p>
-  </div>
+        <div class="square"></div>
+        <div class="botones">
+        <button id="play">Correr animacion</button>
+        <button id="pause">Pausar animacion</button>
+        <button id="stop">Detener animacion</button>
+        </div>
+      </ion-card-item>
+    </ion-card-content>
+  </ion-card>
 
-  <div class="square"></div>
-  <button id="play">Play</button>
-  <button id="pause">Pause</button>
-  <button id="stop">Stop</button>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-item>
+        <img src="../../assets/fondos/jojos.png" alt="">
+      </ion-card-item>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
