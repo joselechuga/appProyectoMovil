@@ -1,15 +1,27 @@
 <ion-header>
   <ion-toolbar>
+
+    <ion-back-button></ion-back-button>
+
     <ion-title class="titulo">Perfil </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
+
     <ion-card-conten>
       <ion-card-item>
       <ion-buttton class="botonmostrarnombre" (click)="mostrar()"><b>Usuario {{usuario.rialname}}</b></ion-buttton>
   
+
+    <ion-card-content>
+      <ion-card-item>
+     
+        <h3>
+          Usuario: {{usuario.rialname}}
+        </h3>
+
 
         <div class="square"></div>
         <div class="botones">
@@ -18,13 +30,21 @@
         <button id="stop">Detener animacion</button>
         </div>
       </ion-card-item>
+
     </ion-card-conten>
+
+    </ion-card-content>
+
   </ion-card>
 
   <ion-card>
     <ion-card-content>
       <ion-card-item>
+
         <img src="assets/fondos/JOJOS.png" alt="">
+
+        <img src="../../assets/fondos/jojos.png" alt="">
+
       </ion-card-item>
     </ion-card-content>
   </ion-card>

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button></ion-back-button>
+    <ion-title>datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- 
+  Campos de usuario:
+  -albumId
+  -id
+  -title
+  -url
+  -thumbnailUrl
+-->
+  <ion-card *ngFor="let usuario of usuarios">
+    <p>
+      <b>Titulo:</b> {{usuario.title}}
+    </p>
+
+    <img src="{{usuario.url}}" alt="">
+
+    
+  </ion-card>
+
+</ion-content>

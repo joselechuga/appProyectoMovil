@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { LoadingController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,12 @@ export class AppComponent {
   salir(){
     localStorage.removeItem('ingresado');
     this.navCtrl.navigateRoot('login');
-    console.log('f');
+    console.log('salir');
   }
+
+  ngOnInit() {
+
+  }
+
 }
 
