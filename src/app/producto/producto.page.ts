@@ -32,6 +32,7 @@ export class ProductoPage implements OnInit {
  */
 
   ngOnInit() {
+    console.log('producto')
     this.permission = true;
     this.getproducto().subscribe(res=>{
       console.log("Res",res)
@@ -49,4 +50,3 @@ export class ProductoPage implements OnInit {
     )
   }
 }
-
