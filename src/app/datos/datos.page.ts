@@ -9,7 +9,7 @@ import { GetdatosService } from './getdatos.service';
 })
 export class DatosPage implements OnInit {
 
-  usuarios
+  datos;
 
   constructor(public proovedor:GetdatosService,private loadingCtrl: LoadingController) {}
 
@@ -17,7 +17,7 @@ export class DatosPage implements OnInit {
 
   ngOnInit() {
     this.proovedor.obtenerDatos().subscribe(
-      (data) => {this.usuarios = data},
+      (data) => {this.datos = data},
       (error)=> {console.log(error);}
     );
 
