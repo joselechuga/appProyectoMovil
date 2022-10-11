@@ -40,6 +40,10 @@ const routes: Routes = [
     path: 'rickymorty',
     loadChildren: () => import('./rickymorty/rickymorty.module').then( m => m.RickymortyPageModule)
   },
+  {
+    path: 'ubicacion',
+    loadChildren: () => import('./ubicacion/ubicacion.module').then( m => m.UbicacionPageModule)
+  },
 
 ];
 
