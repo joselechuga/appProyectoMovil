@@ -24,7 +24,8 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule),
     canActivate:[NoIngresadoGuard]
-  },  {
+  },
+  {
     path: 'producto',
     loadChildren: () => import('./producto/producto.module').then( m => m.ProductoPageModule)
   },
@@ -44,6 +45,15 @@ const routes: Routes = [
     path: 'ubicacion',
     loadChildren: () => import('./ubicacion/ubicacion.module').then( m => m.UbicacionPageModule)
   },
+  {
+    path: 'datos-sql',
+    loadChildren: () => import('./datos-sql/datos-sql.module').then( m => m.DatosSqlPageModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
+  },
+
 
 ];
 
