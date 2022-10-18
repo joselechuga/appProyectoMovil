@@ -33,6 +33,18 @@
                 Perfil
               </ion-label>
             </ion-item>
+            <ion-item [routerDirection]="'categoria'" [routerLink]="'/categoria'">
+              <ion-icon slot="start" [name]="'albums-outline'"></ion-icon>
+              <ion-label>
+                Categoria
+              </ion-label>
+            </ion-item>
+            <ion-item [routerDirection]="'personal'" [routerLink]="'/personal'">
+              <ion-icon slot="start" [name]="'accessibility-outline'"></ion-icon>
+              <ion-label>
+                Personal
+              </ion-label>
+            </ion-item>
             <ion-item (click)="salir()" [routerDirection]="'home'" [routerLink]="'/login'">
               <ion-icon slot="start" name="log-out-outline"></ion-icon>
               <ion-label>
