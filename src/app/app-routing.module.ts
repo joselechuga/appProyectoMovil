@@ -24,7 +24,8 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule),
     canActivate:[NoIngresadoGuard]
-  },  {
+  },
+  {
     path: 'producto',
     loadChildren: () => import('./producto/producto.module').then( m => m.ProductoPageModule)
   },
@@ -45,12 +46,16 @@ const routes: Routes = [
     loadChildren: () => import('./ubicacion/ubicacion.module').then( m => m.UbicacionPageModule)
   },
   {
-    path: 'categoria',
-    loadChildren: () => import('./categoria/categoria.module').then( m => m.CategoriaPageModule)
+    path: 'category',
+    loadChildren: () => import('./category/category.module').then( m => m.CategoryPageModule)
   },
   {
-    path: 'personal',
-    loadChildren: () => import('./personal/personal.module').then( m => m.PersonalPageModule)
+    path: 'person',
+    loadChildren: () => import('./person/person.module').then( m => m.PersonPageModule)
+  },
+  {
+    path: 'person',
+    loadChildren: () => import('./person/person.module').then( m => m.PersonPageModule)
   },
 
 ];
