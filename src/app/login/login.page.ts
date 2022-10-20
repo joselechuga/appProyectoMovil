@@ -17,8 +17,7 @@ export class LoginPage implements OnInit {
 
   formularioLogin:FormGroup;
 
-  constructor(private router: Router,
-    public fb:FormBuilder , 
+  constructor(private router: Router,public fb:FormBuilder , 
     public alertController:AlertController,
     public navCtrl: NavController ) { 
 

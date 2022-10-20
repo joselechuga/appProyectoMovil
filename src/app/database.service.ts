@@ -23,7 +23,7 @@ export class DatabaseService {
         this.databaseObj = db;
       })
       .catch((e) => {
-        alert("error on creating database " + JSON.stringify(e));
+        alert("Error Al Crear La Base De Datos " + JSON.stringify(e));
       });
 
     await this.createTables();
@@ -48,14 +48,14 @@ export class DatabaseService {
         []
       )
       .then(() => {
-        return "category created";
+        return "Nueva Categoria Creada";
       })
       .catch((e) => {
         if (e.code === 6) {
-          return "category already exists";
+          return "Esta Categoria Ya Existe";
         }
 
-        return "error on creating category " + JSON.stringify(e);
+        return "Error Al Crear La Categoria " + JSON.stringify(e);
       });
   }
 
@@ -69,7 +69,7 @@ export class DatabaseService {
         return res;
       })
       .catch((e) => {
-        return "error on getting categories " + JSON.stringify(e);
+        return "Error Al Obtener Categories " + JSON.stringify(e);
       });
   }
 
@@ -77,10 +77,10 @@ export class DatabaseService {
     return this.databaseObj
       .executeSql(`DELETE FROM ${this.tables.categories} WHERE id = ${id}`, [])
       .then(() => {
-        return "category deleted";
+        return "Categoria Eliminada";
       })
       .catch((e) => {
-        return "error on deleting category " + JSON.stringify(e);
+        return "Error Al Eliminar La Categoria " + JSON.stringify(e);
       });
   }
 
@@ -91,14 +91,14 @@ export class DatabaseService {
         []
       )
       .then(() => {
-        return "category updated";
+        return "Categoria Actualizada";
       })
       .catch((e) => {
         if (e.code === 6) {
-          return "category already exist";
+          return "La Catagoria Ya Existe";
         }
 
-        return "error on updating category " + JSON.stringify(e);
+        return "Error Al Actualizar La Categoria " + JSON.stringify(e);
       });
   }
 
@@ -109,10 +109,10 @@ export class DatabaseService {
         []
       )
       .then(() => {
-        return "person created";
+        return "Personal Creado";
       })
       .catch((e) => {
-        return "error on creating person " + JSON.stringify(e);
+        return "Error Al Crear al Personal " + JSON.stringify(e);
       });
   }
 
@@ -126,7 +126,7 @@ export class DatabaseService {
         return res;
       })
       .catch((e) => {
-        return "error on getting persons " + JSON.stringify(e);
+        return "Error Al Obtener Al Personal " + JSON.stringify(e);
       });
   }
 
@@ -134,10 +134,10 @@ export class DatabaseService {
     return this.databaseObj
       .executeSql(`DELETE FROM ${this.tables.persons} WHERE id = ${id}`, [])
       .then(() => {
-        return "person deleted";
+        return "Personal Eliminado";
       })
       .catch((e) => {
-        return "error on deleting person " + JSON.stringify(e);
+        return "Error Al Eliminar Al Personal " + JSON.stringify(e);
       });
   }
 
@@ -148,10 +148,10 @@ export class DatabaseService {
         []
       )
       .then(() => {
-        return "person updated";
+        return "Personal Actualizado";
       })
       .catch((e) => {
-        return "error on updating person " + JSON.stringify(e);
+        return "Error al Actualizar Al Personal " + JSON.stringify(e);
       });
   }
 }
