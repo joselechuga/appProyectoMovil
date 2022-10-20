@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { DatosSqlPage } from './datos-sql.page';
+import { PersonPage } from './person.page';
 
-describe('DatosSqlPage', () => {
-  let component: DatosSqlPage;
-  let fixture: ComponentFixture<DatosSqlPage>;
+describe('PersonPage', () => {
+  let component: PersonPage;
+  let fixture: ComponentFixture<PersonPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DatosSqlPage ],
+      declarations: [ PersonPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DatosSqlPage);
+    fixture = TestBed.createComponent(PersonPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

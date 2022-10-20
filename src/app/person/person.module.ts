@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DatosSqlPageRoutingModule } from './datos-sql-routing.module';
+import { PersonPageRoutingModule } from './person-routing.module';
 
-import { DatosSqlPage } from './datos-sql.page';
+import { PersonPage } from './person.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DatosSqlPageRoutingModule
+    PersonPageRoutingModule
   ],
-  declarations: [DatosSqlPage]
+  declarations: [PersonPage]
 })
-export class DatosSqlPageModule {}
+export class PersonPageModule {}

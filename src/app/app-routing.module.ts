@@ -45,14 +45,19 @@ const routes: Routes = [
     path: 'ubicacion',
     loadChildren: () => import('./ubicacion/ubicacion.module').then( m => m.UbicacionPageModule)
   },
-  {
-    path: 'datos-sql',
-    loadChildren: () => import('./datos-sql/datos-sql.module').then( m => m.DatosSqlPageModule)
-  },
+
   {
     path: '**',
     loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
+  },  {
+    path: 'category',
+    loadChildren: () => import('./category/category.module').then( m => m.CategoryPageModule)
   },
+  {
+    path: 'person',
+    loadChildren: () => import('./person/person.module').then( m => m.PersonPageModule)
+  },
+
 
 
 ];
