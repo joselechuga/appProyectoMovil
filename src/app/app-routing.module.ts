@@ -46,6 +46,20 @@ const routes: Routes = [
     loadChildren: () => import('./ubicacion/ubicacion.module').then( m => m.UbicacionPageModule)
   },
   {
+<<<<<<< HEAD
+    path: 'category',
+    loadChildren: () => import('./category/category.module').then( m => m.CategoryPageModule)
+  },
+  {
+    path: 'person',
+    loadChildren: () => import('./person/person.module').then( m => m.PersonPageModule)
+  },
+  {
+    path: 'person',
+    loadChildren: () => import('./person/person.module').then( m => m.PersonPageModule)
+  },
+
+=======
     path: 'datos-sql',
     loadChildren: () => import('./datos-sql/datos-sql.module').then( m => m.DatosSqlPageModule)
   },
@@ -55,6 +69,7 @@ const routes: Routes = [
   },
 
 
+>>>>>>> main
 ];
 
 @NgModule({

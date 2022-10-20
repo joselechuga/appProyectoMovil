@@ -11,10 +11,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 import {HttpClientModule} from '@angular/common/http'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+<<<<<<< HEAD
+import { SQLite } from '@ionic-native/sqlite/ngx';
+=======
 
 import {SQLite} from '@ionic-native/sqlite/ngx'
 
 ;
+>>>>>>> main
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -23,7 +27,11 @@ import {SQLite} from '@ionic-native/sqlite/ngx'
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+<<<<<<< HEAD
+    SQLite,
+=======
     SQLite
+>>>>>>> main
   ],
   bootstrap: [AppComponent]
 })
