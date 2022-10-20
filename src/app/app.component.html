@@ -33,6 +33,12 @@
                 Perfil
               </ion-label>
             </ion-item>
+            <ion-item [routerDirection]="'root'" [routerLink]="'/datos-sql'">
+              <ion-icon slot="start" [name]="'person-outline'"></ion-icon>
+              <ion-label>
+                SQL
+              </ion-label>
+            </ion-item>
             <ion-item (click)="salir()" [routerDirection]="'home'" [routerLink]="'/login'">
               <ion-icon slot="start" name="log-out-outline"></ion-icon>
               <ion-label>

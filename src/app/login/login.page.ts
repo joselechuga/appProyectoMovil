@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { FormGroup,FormControl,Validators,FormBuilder } from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular';
+import { SQLite } from '@ionic-native/sqlite/ngx';
+import { DbService } from '../services/db.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +19,10 @@ export class LoginPage implements OnInit {
 
   formularioLogin:FormGroup;
 
-  constructor(private router: Router,public fb:FormBuilder , 
+  constructor(private router: Router,
+    public fb:FormBuilder , 
+    private sqlite:SQLite,
+    private dbService:DbService,
     public alertController:AlertController,
     public navCtrl: NavController ) { 
 
