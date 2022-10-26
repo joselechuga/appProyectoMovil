@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Platform } from "@ionic/angular";
-import { DatabaseService } from "../database.service";
+import { DatabaseService } from "../service/database.service";
 
 @Component({
   selector: "app-category",
