@@ -11,7 +11,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DatabaseService": () => (/* binding */ DatabaseService)
 /* harmony export */ });
-/* harmony import */ var C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2560);
 /* harmony import */ var _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic-native/sqlite/ngx */ 2820);
@@ -31,7 +31,7 @@ let DatabaseService = class DatabaseService {
   createDatabase() {
     var _this = this;
 
-    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       yield _this.sqlite.create({
         name: "ionic_sqlite_crud",
         location: "default"
@@ -47,7 +47,7 @@ let DatabaseService = class DatabaseService {
   createTables() {
     var _this2 = this;
 
-    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       yield _this2.databaseObj.executeSql(`CREATE TABLE IF NOT EXISTS ${_this2.tables.categories} (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(255) NOT NULL UNIQUE)`, []);
       yield _this2.databaseObj.executeSql(`CREATE TABLE IF NOT EXISTS ${_this2.tables.persons} (id INTEGER PRIMARY KEY AUTOINCREMENT, category_id INTEGER UNSIGNED NOT NULL, name VARCHAR(255) NOT NULL)`, []);
     })();
@@ -56,7 +56,7 @@ let DatabaseService = class DatabaseService {
   addCategory(name) {
     var _this3 = this;
 
-    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _this3.databaseObj.executeSql(`INSERT INTO ${_this3.tables.categories} (name) VALUES ('${name}')`, []).then(() => {
         return "Nueva Categoria Creada";
       }).catch(e => {
@@ -72,7 +72,7 @@ let DatabaseService = class DatabaseService {
   getCategories() {
     var _this4 = this;
 
-    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _this4.databaseObj.executeSql(`SELECT * FROM ${_this4.tables.categories} ORDER BY name ASC`, []).then(res => {
         return res;
       }).catch(e => {
@@ -84,7 +84,7 @@ let DatabaseService = class DatabaseService {
   deleteCategory(id) {
     var _this5 = this;
 
-    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _this5.databaseObj.executeSql(`DELETE FROM ${_this5.tables.categories} WHERE id = ${id}`, []).then(() => {
         return "Categoria Eliminada";
       }).catch(e => {
@@ -96,7 +96,7 @@ let DatabaseService = class DatabaseService {
   editCategory(name, id) {
     var _this6 = this;
 
-    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _this6.databaseObj.executeSql(`UPDATE ${_this6.tables.categories} SET name = '${name}' WHERE id = ${id}`, []).then(() => {
         return "Categoria Actualizada";
       }).catch(e => {
@@ -112,7 +112,7 @@ let DatabaseService = class DatabaseService {
   addPerson(name, category_id) {
     var _this7 = this;
 
-    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _this7.databaseObj.executeSql(`INSERT INTO ${_this7.tables.persons} (name, category_id) VALUES ('${name}', ${category_id})`, []).then(() => {
         return "Personal Creado";
       }).catch(e => {
@@ -124,7 +124,7 @@ let DatabaseService = class DatabaseService {
   getPersons() {
     var _this8 = this;
 
-    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _this8.databaseObj.executeSql(`SELECT persons.id, persons.category_id, persons.name as person, categories.name as category FROM persons INNER JOIN categories ON categories.id = persons.category_id ORDER BY person ASC`, []).then(res => {
         return res;
       }).catch(e => {
@@ -136,7 +136,7 @@ let DatabaseService = class DatabaseService {
   deletePerson(id) {
     var _this9 = this;
 
-    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _this9.databaseObj.executeSql(`DELETE FROM ${_this9.tables.persons} WHERE id = ${id}`, []).then(() => {
         return "Personal Eliminado";
       }).catch(e => {
@@ -148,7 +148,7 @@ let DatabaseService = class DatabaseService {
   editPerson(name, category_id, id) {
     var _this10 = this;
 
-    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _this10.databaseObj.executeSql(`UPDATE ${_this10.tables.persons} SET name = '${name}', category_id = ${category_id} WHERE id = ${id}`, []).then(() => {
         return "Personal Actualizado";
       }).catch(e => {
@@ -395,7 +395,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "a": () => (/* binding */ attachComponent),
 /* harmony export */   "d": () => (/* binding */ detachComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
 /* harmony import */ var _helpers_4d272360_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers-4d272360.js */ 9158);
 
 
@@ -405,7 +405,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const attachComponent = /*#__PURE__*/function () {
-  var _ref = (0,C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps, inline) {
+  var _ref = (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps, inline) {
     var _a;
 
     if (delegate) {
@@ -454,7 +454,7 @@ const CoreDelegate = () => {
   let Reference;
 
   const attachViewToDom = /*#__PURE__*/function () {
-    var _ref2 = (0,C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (parentElement, userComponent, userComponentProps = {}, cssClasses = []) {
+    var _ref2 = (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (parentElement, userComponent, userComponentProps = {}, cssClasses = []) {
       var _a, _b;
 
       BaseComponent = parentElement;
@@ -766,7 +766,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "r": () => (/* binding */ resetContentScrollY),
 /* harmony export */   "s": () => (/* binding */ scrollToTop)
 /* harmony export */ });
-/* harmony import */ var C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
 /* harmony import */ var _helpers_4d272360_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers-4d272360.js */ 9158);
 /* harmony import */ var _index_c4b11676_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-c4b11676.js */ 9273);
 
@@ -803,7 +803,7 @@ const isIonContent = el => el && el.tagName === ION_CONTENT_TAG_NAME;
 
 
 const getScrollElement = /*#__PURE__*/function () {
-  var _ref = (0,C_Users_medin_repoPrograMovil_appProyectoMovil_8_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (el) {
+  var _ref = (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (el) {
     if (isIonContent(el)) {
       yield new Promise(resolve => (0,_helpers_4d272360_js__WEBPACK_IMPORTED_MODULE_1__.c)(el, resolve));
       return el.getScrollElement();

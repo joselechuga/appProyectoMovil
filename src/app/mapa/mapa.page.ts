@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Geolocation, Geoposition } from '@awesome-cordova-plugins/geolocation/ngx';
-
+import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
+import { GoogleMap } from '@capacitor/google-maps';
 
 @Component({
   selector: 'app-mapa',
@@ -8,22 +7,30 @@ import { Geolocation, Geoposition } from '@awesome-cordova-plugins/geolocation/n
   styleUrls: ['./mapa.page.scss'],
 })
 export class MapaPage implements OnInit {
+  @ViewChild ('map')mapRef: ElementRef;
+  map: GoogleMap;
+  constructor() { }
 
-  /**variable que guarda la localiacion actual */
-  ubicacion;
+  ionViewDidEnter(){
+    this.createMap();
+  }
 
-
-  constructor(public geolocation: Geolocation) { }
+  async createMap(){
+    this.map = await GoogleMap.create({
+      id: 'my-map',
+      apiKey: 'environment.mapsKey',
+      element: this.mapRef.nativeElement,
+      config: {
+        center: {
+          lat: 33.6,
+          lng: -117.9,
+        },
+        zoom: 8,
+      },
+    });
+  }
 
   ngOnInit() {
-    this.geolocationNative();
   }
 
-
-  geolocationNative() {
-    this.geolocation.getCurrentPosition().then((geposition: Geoposition)=>{
-      console.log(geposition);
-      
-    })
-  }
 }

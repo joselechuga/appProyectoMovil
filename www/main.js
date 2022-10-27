@@ -60,7 +60,7 @@ const routes = [
     },
     {
         path: 'ubicacion',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_awesome-cordova-plugins_geolocation___ivy_ngcc___ngx_index_js"), __webpack_require__.e("src_app_ubicacion_ubicacion_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./ubicacion/ubicacion.module */ 7922)).then(m => m.UbicacionPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_ubicacion_ubicacion_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./ubicacion/ubicacion.module */ 7922)).then(m => m.UbicacionPageModule)
     },
     {
         path: 'category',
@@ -80,11 +80,15 @@ const routes = [
     },
     {
         path: 'mapa',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_awesome-cordova-plugins_geolocation___ivy_ngcc___ngx_index_js"), __webpack_require__.e("src_app_mapa_mapa_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./mapa/mapa.module */ 964)).then(m => m.MapaPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_mapa_mapa_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./mapa/mapa.module */ 964)).then(m => m.MapaPageModule)
     },
     {
         path: 'detalles-perfil',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_detalles-perfil_detalles-perfil_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./detalles-perfil/detalles-perfil.module */ 7718)).then(m => m.DetallesPerfilPageModule)
+    },
+    {
+        path: 'mapa',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_mapa_mapa_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./mapa/mapa.module */ 964)).then(m => m.MapaPageModule)
     },
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -309,7 +313,8 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const environment = {
-    production: false
+    production: false,
+    mapsKey: 'AIzaSyCzXZvD25zq5rW4pchhHLnJdYweeMkR2tY',
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -613,7 +618,7 @@ module.exports = "ion-content {\n  background-color: var(--ion-color-estip2);\n}
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\">\r\n      <ion-header>\r\n        <ion-toolbar>\r\n          <ion-title>Menu</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/producto'\">\r\n              <ion-icon slot=\"start\" [name]=\"'list'\"></ion-icon>\r\n              <ion-label>\r\n                Producto\r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/datos'\">\r\n              <ion-icon slot=\"start\" name=\"globe-sharp\"></ion-icon>\r\n              <ion-label>\r\n                datos\r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/rickymorty'\">\r\n              <ion-icon slot=\"start\" name=\"earth-sharp\"></ion-icon>\r\n              <ion-label>\r\n                Api Rick & Morty \r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'root'\" [routerLink]=\"'/perfil'\">\r\n              <ion-icon slot=\"start\" [name]=\"'person-outline'\"></ion-icon>\r\n              <ion-label>\r\n                Perfil\r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'categoria'\" [routerLink]=\"'/category'\">\r\n              <ion-icon slot=\"start\" [name]=\"'albums-outline'\"></ion-icon>\r\n              <ion-label>\r\n                Categoria\r\n              </ion-label>\r\n            </ion-item>\r\n\r\n            <ion-item [routerDirection]=\"'personal'\" [routerLink]=\"'/person'\">\r\n              <ion-icon slot=\"start\" [name]=\"'accessibility-outline'\"></ion-icon>\r\n              <ion-label>\r\n                Personal\r\n              </ion-label>\r\n            </ion-item>\r\n            \r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/ubicacion'\">\r\n              <ion-icon slot=\"start\" name=\"map-sharp\"></ion-icon>\r\n              <ion-label>\r\n                Ubicación GPS\r\n              </ion-label>\r\n            </ion-item>\r\n            \r\n            <ion-item (click)=\"salir()\" [routerDirection]=\"'home'\" [routerLink]=\"'/login'\">\r\n              <ion-icon slot=\"start\" name=\"log-out-outline\"></ion-icon>\r\n              <ion-label>\r\n                Cerrar sesion\r\n              </ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu> \r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n\r\n<!--\r\nCOMPONENT ORIGINAL \r\n<ion-app>\r\n  <ion-router-outlet></ion-router-outlet>\r\n</ion-app>\r\n-->";
+module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\">\r\n      <ion-header color=\"estilopropio\">\r\n        <ion-toolbar>\r\n          <ion-title>Menu</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/producto'\">\r\n              <ion-icon slot=\"start\" [name]=\"'list'\"></ion-icon>\r\n              <ion-label>\r\n                Producto\r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/datos'\">\r\n              <ion-icon slot=\"start\" name=\"globe-sharp\"></ion-icon>\r\n              <ion-label>\r\n                datos\r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/rickymorty'\">\r\n              <ion-icon slot=\"start\" name=\"earth-sharp\"></ion-icon>\r\n              <ion-label>\r\n                Api Rick & Morty \r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'root'\" [routerLink]=\"'/perfil'\">\r\n              <ion-icon slot=\"start\" [name]=\"'person-outline'\"></ion-icon>\r\n              <ion-label>\r\n                Perfil\r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'categoria'\" [routerLink]=\"'/category'\">\r\n              <ion-icon slot=\"start\" [name]=\"'albums-outline'\"></ion-icon>\r\n              <ion-label>\r\n                Categoria\r\n              </ion-label>\r\n            </ion-item>\r\n\r\n            <ion-item [routerDirection]=\"'personal'\" [routerLink]=\"'/person'\">\r\n              <ion-icon slot=\"start\" [name]=\"'accessibility-outline'\"></ion-icon>\r\n              <ion-label>\r\n                Personal\r\n              </ion-label>\r\n            </ion-item>\r\n            \r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/ubicacion'\">\r\n              <ion-icon slot=\"start\" name=\"map-sharp\"></ion-icon>\r\n              <ion-label>\r\n                Ubicación GPS\r\n              </ion-label>\r\n\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/mapa'\">\r\n              <ion-icon slot=\"start\" name=\"map-sharp\"></ion-icon>\r\n              <ion-label>\r\n                Google Maps\r\n              </ion-label>\r\n            </ion-item>\r\n\r\n            <ion-item (click)=\"salir()\" [routerDirection]=\"'home'\" [routerLink]=\"'/login'\">\r\n              <ion-icon slot=\"start\" name=\"log-out-outline\"></ion-icon>\r\n              <ion-label>\r\n                Cerrar sesion\r\n              </ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu> \r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n\r\n<!--\r\nCOMPONENT ORIGINAL \r\n<ion-app>\r\n  <ion-router-outlet></ion-router-outlet>\r\n</ion-app>\r\n-->";
 
 /***/ })
 
