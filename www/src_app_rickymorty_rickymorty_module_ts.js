@@ -144,7 +144,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
   \************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button defaultHref=\"producto\"></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title>rickymorty</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n <ion-list *ngFor=\"let i of personajes\">\r\n  <ion-item>\r\n    <ion-avatar slot=\"start\" >\r\n      <img src=\"{{i.image}}\" alt=\"\">\r\n    </ion-avatar>\r\n    <ion-label>{{i.name}}</ion-label>\r\n  </ion-item>\r\n </ion-list>\r\n</ion-content>\r\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>rickymorty</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n <ion-list *ngFor=\"let i of personajes\">\r\n  <ion-item>\r\n    <ion-avatar slot=\"start\" >\r\n      <img src=\"{{i.image}}\" alt=\"\">\r\n    </ion-avatar>\r\n    <ion-label>{{i.name}}</ion-label>\r\n  </ion-item>\r\n </ion-list>\r\n</ion-content>\r\n";
 
 /***/ })
 

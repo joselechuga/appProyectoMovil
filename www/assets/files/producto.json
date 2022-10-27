@@ -1,16 +1,22 @@
 {
     "data":[
         {
-            "name":"Teclado Logitech",
-            "imagen":"logitec.jpg"
+            "id": 1,
+            "name":"Teclado Logitech 213",
+            "imagen":"logitec.jpg",
+            "desc": "G213 tiene cinco zonas de iluminación individuales, cada una de ellas personalizable en una paleta de aproximadamente 16,8 millones de colores y distintos niveles de brillo, a juego con tu estilo personal, el sistema o el entorno. La tecnología LIGHTSYNC proporciona iluminación de próxima generación que sincroniza la iluminación y los perfiles del juego con tu contenido. Personalízalo todo de forma rápida y sencilla con Logitech G HUB."
         },
         {
+            "id": 2,
             "name":"Suplemento Gold",
-            "imagen":"golstand.jpg"
+            "imagen":"golstand.jpg",
+            "desc": "100% GOLD ESTÁNDAR WHEY, por años elegida la mejor proteína y suplemento de EEUU, te ayudará a proteger y recuperar tus músculos después de practicar deportes ya que está compuesto con proteínas 100% suero de leche no aislado (24 g por porción), sólo 1 g de grasa y 2 g de carbohidratos. Posee una alta concentración de aminoácidos ramificados y glutamina. Se absorbe fácilmente por su fórmula con enzimas digestivas. 100% GOLD ESTÁNDAR WHEY viene en un presentación de 2 Lbs (909), 5 Lbs (2273g), en sabores de Plátano, Chocolate, Galletas con Crema, Frutilla, mocha, Rocky Road,BVainilla, Bizcocho y Chocolate Blanco."
         },
         {
+            "id": 3,
             "name":"Pack Beyblade",
-            "imagen":"logitec.jpg"
+            "imagen":"blayblade.jpg",
+            "desc": "Compite con la élite usando el auténtico sistema de batalla japonés Beyblade Burst! La parte superior de Beyblade Burst Pro Series ofrece componentes auténticos y características de rendimiento de batalla. La parte superior cuenta con decoración premium y metal fundido a presión para una ventaja competitiva en la batalla."
         }
     ]
 }
