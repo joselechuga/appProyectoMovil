@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="estilopropio">
+    <ion-back-button slot="start" defaultHref="perfil"></ion-back-button>
+    <ion-title>detalles-perfil</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-segment value="detalles-perfil" (ionChange)="segmentChanged($event)">
+      <ion-segment-button  value="detail-perfil">
+        <ion-icon name="caret-forward-circle-sharp"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button  value="detail-perfil2">
+        <ion-icon name="moon-sharp"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="salir">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-router-outlet></ion-router-outlet>
+
+</ion-content>

@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&display=swap');
+
+ion-card{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+ion-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    background-image:url(../../assets/fondos/halloween.jpg);
+}
+
+iframe{
+    height: 50vh;
+}
+.textohalloween{
+    font-size: 30px;
+    font-family: 'Fruktur', cursive;
+    -webkit-text-stroke: 1px rgb(203, 84, 10);
+}
+
+.gif{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

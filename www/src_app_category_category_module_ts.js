@@ -95,7 +95,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _category_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./category.page.scss?ngResource */ 5058);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 2560);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ 3819);
-/* harmony import */ var _database_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../database.service */ 1483);
+/* harmony import */ var _service_database_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/database.service */ 4138);
 
 
 
@@ -164,7 +164,7 @@ let CategoryPage = class CategoryPage {
     }
 };
 CategoryPage.ctorParameters = () => [
-    { type: _database_service__WEBPACK_IMPORTED_MODULE_2__.DatabaseService },
+    { type: _service_database_service__WEBPACK_IMPORTED_MODULE_2__.DatabaseService },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__.Platform }
 ];
 CategoryPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
@@ -195,7 +195,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
   \********************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Category</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-item>\n      <ion-label position=\"floating\">Category</ion-label>\n      <ion-input [(ngModel)]=\"categoryName\"></ion-input>\n    </ion-item>\n\n    <ion-button expand=\"block\" (click)=\"addCategory()\">Submit</ion-button>\n  </ion-list>\n\n  <ion-list>\n    <ion-item-sliding *ngFor=\"let category of categories\">\n      <ion-item-options side=\"start\">\n        <ion-item-option (click)=\"editCategory(category)\">Edit</ion-item-option>\n      </ion-item-options>\n\n      <ion-item>\n        <ion-label>{{ category.name }}</ion-label>\n      </ion-item>\n\n      <ion-item-options side=\"end\">\n        <ion-item-option color=\"danger\" (click)=\"deleteCategory(category.id)\"\n          >Delete</ion-item-option\n        >\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n</ion-content>";
+module.exports = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>Categoria</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-list>\r\n    <ion-item>\r\n      <ion-label position=\"floating\">Categorias</ion-label>\r\n      <ion-input [(ngModel)]=\"categoryName\"></ion-input>\r\n    </ion-item>\r\n\r\n    <ion-button expand=\"block\" (click)=\"addCategory()\">Agregar</ion-button>\r\n  </ion-list>\r\n\r\n  <ion-list>\r\n    <ion-item-sliding *ngFor=\"let category of categories\">\r\n      <ion-item-options side=\"start\">\r\n        <ion-item-option (click)=\"editCategory(category)\">Edit</ion-item-option>\r\n      </ion-item-options>\r\n\r\n      <ion-item>\r\n        <ion-label>{{ category.name }}</ion-label>\r\n      </ion-item>\r\n\r\n      <ion-item-options side=\"end\">\r\n        <ion-item-option color=\"danger\" (click)=\"deleteCategory(category.id)\"\r\n          >Delete</ion-item-option\r\n        >\r\n      </ion-item-options>\r\n    </ion-item-sliding>\r\n  </ion-list>\r\n</ion-content>";
 
 /***/ })
 

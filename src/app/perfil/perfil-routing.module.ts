@@ -6,7 +6,7 @@ import { PerfilPage } from './perfil.page';
 const routes: Routes = [
   {
     path: '',
-    component: PerfilPage
+    component: PerfilPage,
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PerfilPageRoutingModule {}
+export class PerfilPageRoutingModule { }
