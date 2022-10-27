@@ -1,25 +1,53 @@
 
+ion-toolbar{
+  background-color: var(--ion-color-estilopropio);
+}
+
 .a {
   color: blue;
   background-color: aqua;
 }
 
-h3 {
+.perfilcard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+small{
+  font-size: 15px;
+  color: #242526;
+}
+
+p{
   color: black;
+  font-size: 250%;
+}
+
+.fotoperfil{
+  height: 25vh;
+  width: 50vw;
+  border: 2px solid #060606;
+  border-radius: 80px;
+  display: flex;
+  align-items: center;
+  background-color: #515455; 
+}
+
+.fotoperfil2{
+  border-radius: 80px;
+  
 }
 
 ion-card {
-  background-color: #2b7686;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .botonmostrarnombre {
   color: black;
 }
 
-.botones {
-  display: flex;
-  flex-direction: column;
-}
 
 button {
   background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
@@ -27,6 +55,7 @@ button {
   padding: 10px;
   margin: 3px;
   border-radius: 15px;
+  color: black;
 }
 
 ion-card{

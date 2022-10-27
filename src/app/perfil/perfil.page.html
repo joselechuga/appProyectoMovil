@@ -1,19 +1,26 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="estilopropio">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="producto"></ion-back-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title class="titulo">Perfil </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-card class="perfilcard">
+    
+    <div class="fotoperfil">
+      <img class="fotoperfil2" src="../../assets/fondos/Pikachu.png" alt="">
+    </div>
+    <small>USUARIO</small>
+    <p>{{usuario.rialname}}</p>
+    <button class="botondetalle" [routerLink]="['/detalles-perfil']">DETALLES DEL PERFIL</button>
+
+  </ion-card>
+
   <ion-card>
-
-        <h3>
-          Usuario: {{usuario.rialname}}
-        </h3>
-
         <div class="square"></div>
         <div class="botones">
         <button id="play">Correr animacion</button>
@@ -22,11 +29,5 @@
         </div>
 
   </ion-card>
-
-  <ion-card>
-
-    <img src="../../assets/fondos/JOJOS.png" alt="">
-
-  </ion-card>
-
+  
 </ion-content>

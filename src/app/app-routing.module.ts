@@ -60,7 +60,15 @@ const routes: Routes = [
   {
     path: 'productos/:id',
     loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
+  },  {
+    path: 'mapa',
+    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
   },
+  {
+    path: 'detalles-perfil',
+    loadChildren: () => import('./detalles-perfil/detalles-perfil.module').then( m => m.DetallesPerfilPageModule)
+  },
+
 
 
 ];

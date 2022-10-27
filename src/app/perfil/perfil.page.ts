@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { createAnimation, NavController } from '@ionic/angular';
 @Component({
   selector: 'app-perfil',
@@ -9,10 +10,11 @@ export class PerfilPage implements OnInit {
 
   usuario = JSON.parse(localStorage.getItem('usuario'));
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController ,
+    public router:Router) {}
 
 
-
+/**funcion de animacion para el perfil */
   ngOnInit() {
     const animation = createAnimation()
       .addElement(document.querySelector('.square'))
