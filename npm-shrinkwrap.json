@@ -20,6 +20,7 @@
         "@capacitor/android": "^4.3.0",
         "@capacitor/app": "4.0.1",
         "@capacitor/core": "^4.1.0",
+        "@capacitor/geolocation": "^4.0.1",
         "@capacitor/google-maps": "^4.3.0",
         "@capacitor/haptics": "4.0.1",
         "@capacitor/keyboard": "4.0.1",
@@ -28,6 +29,7 @@
         "@ionic-native/sqlite": "^5.36.0",
         "@ionic-native/status-bar": "^5.36.0",
         "@ionic/angular": "^6.1.9",
+        "@types/googlemaps": "^3.43.3",
         "cordova-plugin-advanced-http": "^3.3.1",
         "cordova-plugin-file": "^7.0.0",
         "cordova-plugin-geolocation": "^4.1.0",
@@ -2361,6 +2363,14 @@
         "tslib": "^2.1.0"
       }
     },
+    "node_modules/@capacitor/geolocation": {
+      "version": "4.0.1",
+      "resolved": "https://registry.npmjs.org/@capacitor/geolocation/-/geolocation-4.0.1.tgz",
+      "integrity": "sha512-5dxXfDU1rCkn8xrXk6cQwUr+F2ZRycZoU5zi8MFVnH7JvHruV3B152Uz+urRkF/GtKQrgvxEW78GbejOW+nfYw==",
+      "peerDependencies": {
+        "@capacitor/core": "^4.0.0"
+      }
+    },
     "node_modules/@capacitor/google-maps": {
       "version": "4.3.0",
       "resolved": "https://registry.npmjs.org/@capacitor/google-maps/-/google-maps-4.3.0.tgz",
@@ -4250,6 +4260,12 @@
       "dependencies": {
         "@types/node": "*"
       }
+    },
+    "node_modules/@types/googlemaps": {
+      "version": "3.43.3",
+      "resolved": "https://registry.npmjs.org/@types/googlemaps/-/googlemaps-3.43.3.tgz",
+      "integrity": "sha512-ZWNoz/O8MPEpiajvj7QiqCY8tTLFNqNZ/a+s+zTV58wFVNAvvqV4bdGfnsjTb5Cs4V6wEsLrX8XRhmnyYJ2Tdg==",
+      "deprecated": "Types for the Google Maps browser API have moved to @types/google.maps. Note: these types are not for the googlemaps npm package, which is a Node API."
     },
     "node_modules/@types/http-proxy": {
       "version": "1.17.9",
@@ -18724,6 +18740,12 @@
         "tslib": "^2.1.0"
       }
     },
+    "@capacitor/geolocation": {
+      "version": "4.0.1",
+      "resolved": "https://registry.npmjs.org/@capacitor/geolocation/-/geolocation-4.0.1.tgz",
+      "integrity": "sha512-5dxXfDU1rCkn8xrXk6cQwUr+F2ZRycZoU5zi8MFVnH7JvHruV3B152Uz+urRkF/GtKQrgvxEW78GbejOW+nfYw==",
+      "requires": {}
+    },
     "@capacitor/google-maps": {
       "version": "4.3.0",
       "resolved": "https://registry.npmjs.org/@capacitor/google-maps/-/google-maps-4.3.0.tgz",
@@ -20106,6 +20128,11 @@
       "requires": {
         "@types/node": "*"
       }
+    },
+    "@types/googlemaps": {
+      "version": "3.43.3",
+      "resolved": "https://registry.npmjs.org/@types/googlemaps/-/googlemaps-3.43.3.tgz",
+      "integrity": "sha512-ZWNoz/O8MPEpiajvj7QiqCY8tTLFNqNZ/a+s+zTV58wFVNAvvqV4bdGfnsjTb5Cs4V6wEsLrX8XRhmnyYJ2Tdg=="
     },
     "@types/http-proxy": {
       "version": "1.17.9",

@@ -52,8 +52,15 @@
               <ion-label>
                 Ubicación GPS
               </ion-label>
+
             </ion-item>
-            
+            <ion-item [routerDirection]="'home'" [routerLink]="'/mapa'">
+              <ion-icon slot="start" name="map-sharp"></ion-icon>
+              <ion-label>
+                Google Maps
+              </ion-label>
+            </ion-item>
+
             <ion-item (click)="salir()" [routerDirection]="'home'" [routerLink]="'/login'">
               <ion-icon slot="start" name="log-out-outline"></ion-icon>
               <ion-label>

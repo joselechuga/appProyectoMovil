@@ -11,6 +11,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'mapa',
+    redirectTo: 'e404',
+    pathMatch: 'full'
+  },
+  {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
     canActivate:[IngresadoGuard]
@@ -60,13 +65,22 @@ const routes: Routes = [
   {
     path: 'productos/:id',
     loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
-  },  {
+  },
+  {
     path: 'mapa',
     loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
   },
   {
     path: 'detalles-perfil',
     loadChildren: () => import('./detalles-perfil/detalles-perfil.module').then( m => m.DetallesPerfilPageModule)
+  },
+  {
+    path: 'mapa',
+    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
+  },
+  {
+    path: 'e404',
+    loadChildren: () => import('./e404/e404.module').then( m => m.E404PageModule)
   },
 
 

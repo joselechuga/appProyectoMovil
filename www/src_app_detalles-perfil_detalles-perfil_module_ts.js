@@ -254,7 +254,7 @@ module.exports = "ion-toolbar {\n  background-color: var(--ion-color-estilopropi
   \*************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<p>\n  detail-perfil2 works!\n</p>\n";
+module.exports = "<p>\r\n  detail-perfil2 works!\r\n</p>\r\n";
 
 /***/ }),
 
@@ -264,7 +264,7 @@ module.exports = "<p>\n  detail-perfil2 works!\n</p>\n";
   \***********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<p>\n  Hola! Conoce los detalles de tu perfil\n    \n  <ion-card>\n    <ion-item class=\"gif\">\n      <iframe src=\"https://giphy.com/embed/100TIDBVCq8Zji\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>\n    </ion-item>\n\n    <ion-item>\n      <h2 class=\"textohalloween\">SE VIENE JAGUOLIN !</h2>\n    </ion-item>\n    \n  </ion-card>\n</p>\n\n";
+module.exports = "<p>\r\n  Hola! Conoce los detalles de tu perfil\r\n    \r\n  <ion-card>\r\n    <ion-item class=\"gif\">\r\n      <iframe src=\"https://giphy.com/embed/100TIDBVCq8Zji\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <h2 class=\"textohalloween\">SE VIENE JAGUOLIN !</h2>\r\n    </ion-item>\r\n    \r\n  </ion-card>\r\n</p>\r\n\r\n";
 
 /***/ }),
 
@@ -274,7 +274,7 @@ module.exports = "<p>\n  Hola! Conoce los detalles de tu perfil\n    \n  <ion-ca
   \**********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"estilopropio\">\n    <ion-back-button slot=\"start\" defaultHref=\"perfil\"></ion-back-button>\n    <ion-title>detalles-perfil</ion-title>\n  </ion-toolbar>\n\n  <ion-toolbar>\n    <ion-segment value=\"detalles-perfil\" (ionChange)=\"segmentChanged($event)\">\n      <ion-segment-button  value=\"detail-perfil\">\n        <ion-icon name=\"caret-forward-circle-sharp\"></ion-icon>\n      </ion-segment-button>\n      <ion-segment-button  value=\"detail-perfil2\">\n        <ion-icon name=\"moon-sharp\"></ion-icon>\n      </ion-segment-button>\n      <ion-segment-button value=\"salir\">\n        <ion-icon name=\"log-out-outline\"></ion-icon>\n      </ion-segment-button>\n    </ion-segment>\n  </ion-toolbar>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-router-outlet></ion-router-outlet>\n\n</ion-content>\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar color=\"estilopropio\">\r\n    <ion-back-button slot=\"start\" defaultHref=\"perfil\"></ion-back-button>\r\n    <ion-title>detalles-perfil</ion-title>\r\n  </ion-toolbar>\r\n\r\n  <ion-toolbar>\r\n    <ion-segment value=\"detalles-perfil\" (ionChange)=\"segmentChanged($event)\">\r\n      <ion-segment-button  value=\"detail-perfil\">\r\n        <ion-icon name=\"caret-forward-circle-sharp\"></ion-icon>\r\n      </ion-segment-button>\r\n      <ion-segment-button  value=\"detail-perfil2\">\r\n        <ion-icon name=\"moon-sharp\"></ion-icon>\r\n      </ion-segment-button>\r\n      <ion-segment-button value=\"salir\">\r\n        <ion-icon name=\"log-out-outline\"></ion-icon>\r\n      </ion-segment-button>\r\n    </ion-segment>\r\n  </ion-toolbar>\r\n\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n  <ion-router-outlet></ion-router-outlet>\r\n\r\n</ion-content>\r\n";
 
 /***/ })
 
