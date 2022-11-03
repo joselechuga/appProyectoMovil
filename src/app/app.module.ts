@@ -5,13 +5,16 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
+import { Storage } from '@ionic/storage';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import {HttpClientModule} from '@angular/common/http'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SQLite } from '@ionic-native/sqlite/ngx';
+import { AuthenticationService } from './service/authentication.service';
+import { AuthGardService } from './service/auth-gard.service';
+import { DatabaseService } from './service/database.service';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -19,8 +22,12 @@ import { SQLite } from '@ionic-native/sqlite/ngx';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     SQLite,
+    Storage,
+    DatabaseService,
+    AuthGardService,
+    AuthenticationService,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })

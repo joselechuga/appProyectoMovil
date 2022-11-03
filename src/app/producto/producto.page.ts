@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http'
 import {map} from "rxjs/operators";
 import { NavController } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-producto',
@@ -17,6 +18,7 @@ export class ProductoPage implements OnInit {
   permission: boolean;
 
   constructor(private http:HttpClient,
+    private activeroute: ActivatedRoute,
     public navCtrl:NavController) {
       //this.tabBarElement = document.querySelector('.tabbar');
     }
