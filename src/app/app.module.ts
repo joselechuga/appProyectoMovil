@@ -12,8 +12,6 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SQLite } from '@ionic-native/sqlite/ngx';
-import { AuthenticationService } from './service/authentication.service';
-import { AuthGardService } from './service/auth-gard.service';
 import { DatabaseService } from './service/database.service';
 @NgModule({
   declarations: [AppComponent],
@@ -25,8 +23,6 @@ import { DatabaseService } from './service/database.service';
     SQLite,
     Storage,
     DatabaseService,
-    AuthGardService,
-    AuthenticationService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
