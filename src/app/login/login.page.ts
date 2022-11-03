@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController, AlertController } from '@ionic/angular';
-import { DatabaseService} from '../service/database.service';
 import { Router } from '@angular/router';
-import { Storage } from '@ionic/storage';
-import { AuthenticationService } from '../service/authentication.service';
+import { LoadingController, ToastController } from '@ionic/angular';
+import { ApiService } from '../service/api.service';
 
 @Component({
   selector: 'app-login',
@@ -11,132 +9,72 @@ import { AuthenticationService } from '../service/authentication.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  // Modelo user que permite obtener y setear información para el login
-  login:any={
-    Usuario:"",
-    Password:""
-  }
-  // variable para mostrar el campo faltante
-  field:string="";
-  // Constructor que llama al toastController para su uso
-  constructor(public toastController: ToastController,
-    public databaseService: DatabaseService,
-    public alertController: AlertController,
-    private router: Router,
-    private storage: Storage,
-    public authenticationSerive:AuthenticationService) {}
-  ngOnInit() {}
-  /**
-   * Función que permite el inicio de sesión y acceder
-   * al Home
-   */
-  ingresar(){
-    // Se valida que el usuario ingreso todos los datos
-    if(this.validateModel(this.login)){
-      // Se obtiene si existe alguna data de sesión
-      this.authenticationSerive.login(this.login);
-    }
-    else{
-      this.presentToast("Falta: "+this.field);
+  validador: boolean = false;
+  mdl_correo: string = '';
+  mdl_pass: string = '';
+
+
+  constructor(private router: Router, private api: ApiService,
+    private loading: LoadingController, private toastController: ToastController
+  ) {
+    if (window.localStorage.getItem('usuario') != null) {
+      this.api.validador = true;
+      this.router.navigate(['home']);
+    } else {
+      this.api.validador = false;
+      this.router.navigate(['login']);
     }
   }
-  registrar(){
-    this.createSesionData(this.login);
-    console.log(this.login)
+
+  navegar() {
+    this.router.navigate(['registrar']);
   }
-  /**
-   * Función que genera (registra) una nueva sesión
-   * @param login 
-   */
-  createSesionData(login: any) {
-    if(this.validateModel(login)){ // Se valida que se ingresen todos los datos
-      /**
-       * Se hace una copia del login, se hace así ya que
-       * el operador '=' no haceuna copia de los datos, si no
-       * que crea una nueva referencia a los mismos datos.
-       * Por eso se utiliza el Object.assign
-       */
-      let copy = Object.assign({},login);
-      copy.Active=1; // Se agrega el valor active = 1 a la copia
-      this.databaseService.createSesionData(copy) // la copia se le apsa a la función para crear la sesion
-      .then((data)=>{ // si la sentencia se ejecuto correctamente
-        this.presentToast("Bienvenido"); // Se muestra el mensaje de bienvenido
-        this.storage.set("USER_DATA",data);  // Se setea el USER_DATA en el storage
-        this.router.navigate(['producto']); // Se navega hasta el home
-      })
-      .catch((error)=>{
-        this.presentToast("El usuario ya existe");
-      })
-    }
-    else{
-      this.presentToast("Falta: "+this.field);
-    }
+  ngOnInit() {
+    this.loading.create({
+      message: '',
+      spinner: 'bubbles'
+    }).then(res => {
+      res.dismiss();
+    });
   }
-  /**
-   * validateModel sirve para validar que se ingrese algo en los
-   * campos del html mediante su modelo
-   */
-  validateModel(model:any){
-    // Recorro todas las entradas que me entrega Object entries y obtengo su clave, valor
-    for (var [key, value] of Object.entries(model)) {
-      // Si un valor es "" se retornara false y se avisara de lo faltante
-      if (value=="") {
-        // Se asigna el campo faltante
-        this.field=key;
-        // Se retorna false
-        return false;
-      }
-    }
-    return true;
-  }
-  /**
-   * Muestra un toast al usuario
-   * @param message Mensaje a presentar al usuario
-   * @param duration Duración el toast, este es opcional
-   */
-  async presentToast(message:string, duration?:number){
-    const toast = await this.toastController.create(
-      {
-        message:message,
-        duration:duration?duration:2000
-      }
-    );
-    toast.present();
-  }
-  /**
-   * Función parte del ciclo de vida de un componente
-   */
-  ionViewWillEnter(){
-    console.log('ionViewDidEnter');
-      // Se valida que exista una sesión activa
-      this.databaseService.sesionActive()
-      .then((data)=>{
-        if(data!=undefined){
-          this.storage.set("USER_DATA",data); 
-          this.router.navigate(['home']);
+  
+  usuarioLogin(){
+    let that = this;
+    if(this.mdl_pass.length <4){
+      that.mostrarMensaje('El minimo de caracteres para la contraseña es 4');
+    }else{
+      this.loading.create({
+        message: 'Iniciando sesion...',
+        spinner: 'bubbles'
+      }).then(async res => {
+        res.present();
+        let data = await that.api.usuarioLogin(
+          that.mdl_correo,that.mdl_pass
+        );
+        if(data['result'] == 'LOGIN OK') {
+          that.mostrarMensaje('Se ha iniciado sesion exitosamente');
+          localStorage.setItem('usuario', JSON.stringify({user:that.mdl_correo}));
+          that.api.validador = true;
+          that.router.navigate(['producto']);
+          console.log(data);
+        } else {
+          that.mostrarMensaje('El correo o la contraseña es incorrecta');
+          console.log(data);
         }
-      })
-      .catch((error)=>{
-        this.router.navigate(['login']);
-      })
+        res.dismiss();
+      }
+      )
+    }
+
   }
-  async presentAlertConfirm() {
-    const alert = await this.alertController.create({
-      header: 'Creación de Usuario',
-      message: 'Mensaje <strong>El usuario no existe, desea registrarse?</strong>',
-      buttons: [
-        {
-          text: 'NO',
-          role: 'cancel'
-        }, {
-          text: 'SI',
-          handler: () => {
-            this.createSesionData(this.login)
-          }
-        }
-      ]
+  async mostrarMensaje(mensaje) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 3000,
+      position: 'bottom'
     });
 
-    await alert.present();
+    await toast.present();
   }
+
 }

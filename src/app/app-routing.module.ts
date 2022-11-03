@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { IngresadoGuard } from './ingresado.guard';
 import { NoIngresadoGuard } from './no-ingresado.guard';
-import { AuthGardService } from './service/auth-gard.service';
+import { DbService } from './service/db.service';
+import { ApiService } from './service/api.service';
 
 const routes: Routes = [
 
@@ -27,8 +28,8 @@ const routes: Routes = [
     canActivate:[NoIngresadoGuard]
   },
   {
-    path: 'registro',
-    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule),
+    path: 'registrar',
+    loadChildren: () => import('./registrar/registrar.module').then( m => m.RegistrarPageModule),
     canActivate:[NoIngresadoGuard]
   },
   {
