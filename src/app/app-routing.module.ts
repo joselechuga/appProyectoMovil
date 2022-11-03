@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { IngresadoGuard } from './ingresado.guard';
 import { NoIngresadoGuard } from './no-ingresado.guard';
+import { AuthGardService } from './service/auth-gard.service';
 
 const routes: Routes = [
 
@@ -32,7 +33,7 @@ const routes: Routes = [
   },
   {
     path: 'producto',
-    loadChildren: () => import('./producto/producto.module').then( m => m.ProductoPageModule)
+    loadChildren: () => import('./producto/producto.module').then( m => m.ProductoPageModule),
   },
   {
     path: 'perfil',

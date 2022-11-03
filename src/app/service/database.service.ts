@@ -34,13 +34,19 @@ export class DatabaseService {
       `CREATE TABLE IF NOT EXISTS ${this.tables.categories} (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(255) NOT NULL UNIQUE)`,
       []
     );
-
+    await this.databaseObj.executeSql(
+      `CREATE TABLE IF NOT EXIST sesion_data (
+        user.name TEXT PRIMARY KEY NOT NULL,
+        password INTEGER NOT NULL,
+        active INTEGER(1) NOT NULL)`,
+      []
+    );
     await this.databaseObj.executeSql(
       `CREATE TABLE IF NOT EXISTS ${this.tables.persons} (id INTEGER PRIMARY KEY AUTOINCREMENT, category_id INTEGER UNSIGNED NOT NULL, name VARCHAR(255) NOT NULL)`,
       []
     );
   }
-
+  
   async addCategory(name: string) {
     return this.databaseObj
       .executeSql(
@@ -154,4 +160,47 @@ export class DatabaseService {
         return "Error al Actualizar Al Personal " + JSON.stringify(e);
       });
   }
+  
+  async sesionActive(){
+    // Se desarrolla la consulta
+    let sql = `SELECT user_name,active FROM sesion_data WHERE active=1 LIMIT 1`;
+    // Se ejecuta la consulta y no le pasamos parametros [value,value1,...]
+    return this.databaseObj.executeSql(sql,[])
+    // Cuando se ejecute la consulta
+    .then(response=>{ // obtenemos lo que devuelve la consulta
+      return Promise.resolve(response.rows.item(0)); // Se obtiene el primer item de la consulta y se retorna
+    });
+  }
+  /**
+   * 
+   * @param sesion 
+   */
+  async getSesionData(sesion:any){
+    let sql = `SELECT user_name, active FROM sesion_data
+    WHERE user_name=? AND password=? LIMIT 1`;
+    return this.databaseObj.executeSql(sql,[sesion.Usuario,
+      sesion.Password]).then(response=>{
+        return Promise.resolve(response.rows.item(0));
+      });
+  }
+    /**
+   * 
+   * @param sesion 
+   */
+  async createSesionData(sesion:any){
+    let sql = `INSERT INTO sesion_data(user_name,password,active)
+    VALUES(?,?,?)`;
+    return this.databaseObj.executeSql(sql, [sesion.Usuario, 
+      sesion.Password, sesion.Active]).then(response=>{
+        return Promise.resolve(response.rows.item(0));
+      });;
+    }
+
+  async  updateSesionData(sesion:any){
+      let sql = `UPDATE sesion_data
+      SET active=?
+      WHERE user_name=?`;
+      return this.databaseObj.executeSql(sql, [sesion.active,sesion.user_name]);
+    }
+   
 }
