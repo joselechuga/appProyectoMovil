@@ -1,27 +1,46 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>  
     <ion-title id="titulo">
-      Blank
+      
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-card>
-    <ion-card-content>
-      <ion-item lines="none">
-        <ion-label >Usuario : {{data.usuario}}</ion-label>
-      </ion-item>
-      <ion-button (click)="salir()">Cerrar sesion</ion-button>
-      <ion-button (click)="color()">colorr</ion-button>
-    </ion-card-content>
-  </ion-card>
+  <div>
+    <h2>Descubre nuestros productos</h2>
+  </div>
+ <ion-button class="botonprod" [routerLink]="['/producto']">   
+  <h2>Descubre nuestros productos</h2>
+    <img src="https://www.asicomsystems.com.mx/img/saas/dispositivos_img.png" alt="">
+  </ion-button>
 
-  <ion-button (click)="irtienda()"> Vamos a la tienda </ion-button>
+
+<div class="botonnav"> 
+  <ion-fab>
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="start">
+      <ion-fab-button [routerLink]="['/producto']">
+        <ion-icon name="storefront-sharp"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="color-palette"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="end">
+      <ion-fab-button>
+        <ion-icon name="document"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button [routerLink]="['/perfil']">
+        <ion-icon name="person-sharp"></ion-icon>
+      </ion-fab-button>
+
+    </ion-fab-list>
+  </ion-fab>
+</div>
 </ion-content>
