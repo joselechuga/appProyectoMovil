@@ -1,18 +1,20 @@
 <ion-header>
   <ion-toolbar class="color-body">
-    <ion-title class="color-title">Registro de Usuario</ion-title>
+    <ion-title class="head">Registro de Usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-item>
-      <ion-label position="floating"><ion-icon name="person-outline"></ion-icon> Nombre</ion-label>
-      <ion-input [(ngModel)]="mdl_nombre"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating"><ion-icon name="person-outline"></ion-icon> Apellido</ion-label>
-      <ion-input [(ngModel)]="mdl_apellido"></ion-input>
-    </ion-item>
+    <div class="nombres">
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="person-outline"></ion-icon> Nombre</ion-label>
+        <ion-input [(ngModel)]="mdl_nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="person-outline"></ion-icon> Apellido</ion-label>
+        <ion-input [(ngModel)]="mdl_apellido"></ion-input>
+      </ion-item>
+    </div>
     <ion-item>
       <ion-label position="floating"><ion-icon name="mail-outline" position="floating"></ion-icon> Correo </ion-label>
       <ion-input type="email" placeholder="email@mail.com" [(ngModel)]="mdl_correo"></ion-input>
