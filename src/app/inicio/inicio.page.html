@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar class="head">
+    <ion-title>JOJO APP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body">
+
+  <div class="seccionchilds">
+    <div class="imageninicio">
+      <img src="../../assets/fondos/JoJosbizarre.png" alt="">
+    </div>
+    <ion-router-outlet></ion-router-outlet>
+  </div>
+
+
+  <ion-card>
+    <ion-toolbar>
+      <ion-segment value="inicio" (ionChange)="segmentChanged($event)">
+
+        <ion-segment-button value="login">
+          <small>Login</small>  
+          <ion-icon name="log-in-sharp"></ion-icon>
+        </ion-segment-button>
+
+        <ion-segment-button value="registrar">
+          <small>Registro</small>
+          <ion-icon name="accessibility-sharp"></ion-icon>
+        </ion-segment-button>
+        
+      </ion-segment>
+    </ion-toolbar>
+  </ion-card>
+
+</ion-content>

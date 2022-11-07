@@ -17,7 +17,7 @@ export class IngresadoGuard implements CanActivate {
       if(localStorage.getItem('ingresado')){
         return true;
       }else{
-        this.navCtrl.navigateRoot('login');
+        this.navCtrl.navigateRoot('inicio');
         return false;
       }
   }

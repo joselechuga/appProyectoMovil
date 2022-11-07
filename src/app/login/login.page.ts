@@ -56,6 +56,7 @@ export class LoginPage implements OnInit {
           localStorage.setItem('usuario', JSON.stringify({user:that.mdl_correo}));
           that.api.validador = true;
           that.router.navigate(['producto']);
+          localStorage.setItem('ingresado','true');
           console.log(data);
         } else {
           that.mostrarMensaje('El correo o la contraseña es incorrecta');

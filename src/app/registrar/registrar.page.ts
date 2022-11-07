@@ -61,7 +61,7 @@ export class RegistrarPage implements OnInit {
   async mostrarMensaje(mensaje) {
     const toast = await this.toastController.create({
       message: mensaje,
-      duration: 3000,
+      duration: 5000,
       position: 'bottom'
     });
 
