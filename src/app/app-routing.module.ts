@@ -9,13 +9,18 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'inicio',
     pathMatch: 'full'
   },
   {
     path: 'mapa',
     redirectTo: 'e404',
     pathMatch: 'full'
+  },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule),
+    canActivate:[NoIngresadoGuard]
   },
   {
     path: 'home',
@@ -25,7 +30,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
-    canActivate:[NoIngresadoGuard]
+    
   },
   {
     path: 'registrar',
@@ -83,7 +88,13 @@ const routes: Routes = [
   {
     path: 'e404',
     loadChildren: () => import('./e404/e404.module').then( m => m.E404PageModule)
+  },  {
+    path: 'catalogo-productos',
+    loadChildren: () => import('./catalogo-productos/catalogo-productos.module').then( m => m.CatalogoProductosPageModule)
   },
+
+
+
 
 
 
