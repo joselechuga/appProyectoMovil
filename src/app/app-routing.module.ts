@@ -88,9 +88,14 @@ const routes: Routes = [
   {
     path: 'e404',
     loadChildren: () => import('./e404/e404.module').then( m => m.E404PageModule)
-  },  {
+  },
+  {
     path: 'catalogo-productos',
     loadChildren: () => import('./catalogo-productos/catalogo-productos.module').then( m => m.CatalogoProductosPageModule)
+  },
+  {
+    path: 'prod-detail/:id',
+    loadChildren: () => import('./prod-detail/prod-detail.module').then( m => m.ProdDetailPageModule)
   },
 
 

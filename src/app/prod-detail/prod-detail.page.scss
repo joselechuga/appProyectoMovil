@@ -1,0 +1,42 @@
+ion-content{
+    --ion-background-color:linear-gradient(to top, #cfd2d4 0%, #c5cfd5 100%);
+}
+
+.barrabtnbck{
+    height: 10vh;
+    background-color: #92c6b9;
+}
+
+ion-back-button{
+    color:rgb(125, 126, 127);
+}
+
+#contenedorbtns{
+    background-color: aliceblue;
+    height: 5vh;
+    width: 65vw;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    opacity: 0.5;
+}
+
+#btncarru{
+    background-color: var(--ion-color-estilopropio);
+    height: 2vh;
+    width: 4vw;
+    border-radius: 50%;
+    margin: 7px;
+}
+
+.carousel-inner{
+    border-radius: 0 0 80px 80px;
+    height: 50vh;
+    background-color: #92c6b9;
+    box-shadow: 10px 10px 10px 1px rgba(8, 8, 8, 0.2);
+}
+
+img{
+    filter: drop-shadow(8px 8px 4px rgb(26, 25, 25));
+}
+
