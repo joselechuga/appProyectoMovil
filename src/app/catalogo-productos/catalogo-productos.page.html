@@ -8,12 +8,17 @@
 </ion-header>
 
 <ion-content>
- <ion-list *ngFor="let i of productos" [routerLink]="['/prod-detail/' + i.id]">
+
+   <ion-list *ngFor="let i of productos" [routerLink]="['/prod-detail/' + i.id]">
 
   <ion-card>
     <img src="{{i.image}}" alt="">
-    <h4>{{i.name}}</h4>
+    <div class="titulo">
+      <h4>{{i.name}}</h4>
+    </div>
   </ion-card>
-  
  </ion-list>
+
+
+
 </ion-content>

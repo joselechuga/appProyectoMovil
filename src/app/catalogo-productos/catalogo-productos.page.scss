@@ -1,0 +1,21 @@
+ion-card{
+    border-radius: 40px 5px 40px 5px;
+    height: 35vh;
+    background-color: cadetblue;
+    border: 2px solid rgb(4, 121, 12);
+    filter: drop-shadow(4px 4px 4px rgb(65, 65, 65));
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+h4{
+    color: rgb(43, 43, 43);
+    font-family: 'Anton', sans-serif;
+
+}

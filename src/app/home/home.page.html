@@ -2,9 +2,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-    </ion-buttons>  
+    </ion-buttons>
     <ion-title id="titulo">
-      
+
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,34 +13,40 @@
   <div>
     <h2>Descubre nuestros productos</h2>
   </div>
- <ion-button class="botonprod" [routerLink]="['/producto']">   
-  <h2>Descubre nuestros productos</h2>
+
+  <ion-button class="botonprod" [routerLink]="['/producto']">
     <img src="https://www.asicomsystems.com.mx/img/saas/dispositivos_img.png" alt="">
   </ion-button>
 
+<ion-card>
+  <img src="https://www.asicomsystems.com.mx/img/saas/dispositivos_img.png" alt="">
+</ion-card>
 
-<div class="botonnav"> 
-  <ion-fab>
-    <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="start">
-      <ion-fab-button [routerLink]="['/producto']">
-        <ion-icon name="storefront-sharp"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button>
-        <ion-icon name="color-palette"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="end">
-      <ion-fab-button>
-        <ion-icon name="document"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button [routerLink]="['/perfil']">
-        <ion-icon name="person-sharp"></ion-icon>
-      </ion-fab-button>
 
-    </ion-fab-list>
-  </ion-fab>
-</div>
+  <div class="cajabtninicio">
+    <div class="botonnav">
+      <ion-fab>
+        <ion-fab-button>
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="start">
+          <ion-fab-button [routerLink]="['/producto']">
+            <ion-icon name="storefront-sharp"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button>
+            <ion-icon name="color-palette"></ion-icon>
+          </ion-fab-button>
+        </ion-fab-list>
+        <ion-fab-list side="end">
+          <ion-fab-button>
+            <ion-icon name="document"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button [routerLink]="['/perfil']">
+            <ion-icon name="person-sharp"></ion-icon>
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+    </div>
+  </div>
+
 </ion-content>
