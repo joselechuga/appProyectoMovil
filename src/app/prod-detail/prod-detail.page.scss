@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700);
+
+
 ion-content{
     --ion-background-color:linear-gradient(to top, #cfd2d4 0%, #c5cfd5 100%);
 }
@@ -40,3 +43,35 @@ img{
     filter: drop-shadow(8px 8px 4px rgb(26, 25, 25));
 }
 
+.nomprod{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1,h3{
+    font-family: 'Open Sans', sans-serif;
+}
+
+h4{
+    font-family: 'Open Sans', sans-serif;
+    color: #830a0a; 
+}
+
+.precio{
+    display: flex;
+}
+
+.accordion-item{
+    background-color: #92c6b9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.accordion-button{
+    background-color: #83370a;
+    color: aliceblue;
+    width: 100vw;
+}
