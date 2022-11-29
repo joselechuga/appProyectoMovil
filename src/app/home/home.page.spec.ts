@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
+import {by, element} from 'protractor';
 import { HomePage } from './home.page';
 
 
@@ -27,16 +27,18 @@ describe('HomePage', () => {
 });
 
  */
+
 describe('TESTEO HOME ', () => {
 
-  it(' 1- El componente se debe iniciar ', () => {
+  it(' El componente se debe iniciar ', () => {
     const component = new HomePage();
     expect(component).toBeDefined();    
-    expect(component).toBeInstanceOf(HomePage);    
+        
   });
 
-  it('2- El  ', () => {
-    const component = new HomePage();
-   
-  });
+it('El componente está definido',()=>{
+  const component = new HomePage();
+  expect(component).toBeInstanceOf(HomePage);
+});
+
 });

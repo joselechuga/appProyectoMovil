@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title id="titulo">
-
+      Tienda JOJO 
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -29,13 +29,13 @@
           <ion-fab-button [routerLink]="['/producto']">
             <ion-icon name="storefront-sharp"></ion-icon>
           </ion-fab-button>
-          <ion-fab-button>
-            <ion-icon name="color-palette"></ion-icon>
+          <ion-fab-button [routerLink]="['/catalogo-productos']">
+            <ion-icon name="gift-sharp"></ion-icon>
           </ion-fab-button>
         </ion-fab-list>
         <ion-fab-list side="end">
-          <ion-fab-button>
-            <ion-icon name="document"></ion-icon>
+          <ion-fab-button [routerLink]="['/datos']">
+            <ion-icon name="earth-sharp"></ion-icon>
           </ion-fab-button>
           <ion-fab-button [routerLink]="['/perfil']">
             <ion-icon name="person-sharp"></ion-icon>
