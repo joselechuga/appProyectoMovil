@@ -55,7 +55,7 @@ export class LoginPage implements OnInit {
           that.mostrarMensaje('Se ha iniciado sesion exitosamente');
           localStorage.setItem('usuario', JSON.stringify({user:that.mdl_correo}));
           that.api.validador = true;
-          that.router.navigate(['producto']);
+          that.router.navigate(['catalogo-productos']);
           localStorage.setItem('ingresado','true');
           console.log(data);
         } else {

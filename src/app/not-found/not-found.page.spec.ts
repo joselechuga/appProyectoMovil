@@ -3,6 +3,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { NotFoundPage } from './not-found.page';
 
+/**
+ * 
 describe('NotFoundPage', () => {
   let component: NotFoundPage;
   let fixture: ComponentFixture<NotFoundPage>;
@@ -22,3 +24,5 @@ describe('NotFoundPage', () => {
     expect(component).toBeTruthy();
   });
 });
+
+ */

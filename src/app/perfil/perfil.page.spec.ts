@@ -3,6 +3,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { PerfilPage } from './perfil.page';
 
+/**
+ * 
 describe('PerfilPage', () => {
   let component: PerfilPage;
   let fixture: ComponentFixture<PerfilPage>;
@@ -22,3 +24,5 @@ describe('PerfilPage', () => {
     expect(component).toBeTruthy();
   });
 });
+
+ */

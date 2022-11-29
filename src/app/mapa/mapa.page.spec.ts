@@ -3,6 +3,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { MapaPage } from './mapa.page';
 
+/**
+ * 
 describe('MapaPage', () => {
   let component: MapaPage;
   let fixture: ComponentFixture<MapaPage>;
@@ -22,3 +24,5 @@ describe('MapaPage', () => {
     expect(component).toBeTruthy();
   });
 });
+
+ */

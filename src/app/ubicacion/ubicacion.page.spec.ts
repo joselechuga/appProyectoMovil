@@ -3,6 +3,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { UbicacionPage } from './ubicacion.page';
 
+/**
+ * 
 describe('UbicacionPage', () => {
   let component: UbicacionPage;
   let fixture: ComponentFixture<UbicacionPage>;
@@ -22,3 +24,4 @@ describe('UbicacionPage', () => {
     expect(component).toBeTruthy();
   });
 });
+ */

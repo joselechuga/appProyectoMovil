@@ -2,7 +2,8 @@ import { TestBed } from '@angular/core/testing';
 
 import { DatabaseService } from './database.service';
 
-describe('DatabaseService', () => {
+/**
+ * describe('DatabaseService', () => {
   let service: DatabaseService;
 
   beforeEach(() => {
@@ -14,3 +15,4 @@ describe('DatabaseService', () => {
     expect(service).toBeTruthy();
   });
 });
+ */
