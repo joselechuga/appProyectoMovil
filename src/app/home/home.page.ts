@@ -12,9 +12,7 @@ import { NavController } from '@ionic/angular';
 export class HomePage {
   data: any; 
 
-  constructor(private activeroute: ActivatedRoute,
-     private router: Router,
-     public navCtrl : NavController) {
+  constructor() {
 
   }
 

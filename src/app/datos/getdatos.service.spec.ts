@@ -2,6 +2,8 @@ import { TestBed } from '@angular/core/testing';
 
 import { GetdatosService } from './getdatos.service';
 
+/**
+ * 
 describe('GetdatosService', () => {
   let service: GetdatosService;
 
@@ -14,3 +16,5 @@ describe('GetdatosService', () => {
     expect(service).toBeTruthy();
   });
 });
+
+ */

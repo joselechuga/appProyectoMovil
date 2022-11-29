@@ -3,6 +3,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { E404Page } from './e404.page';
 
+/**
+ * 
 describe('E404Page', () => {
   let component: E404Page;
   let fixture: ComponentFixture<E404Page>;
@@ -22,3 +24,5 @@ describe('E404Page', () => {
     expect(component).toBeTruthy();
   });
 });
+
+ */

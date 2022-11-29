@@ -1,19 +1,26 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="estilopropio">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Catalogo</ion-title>
+    </ion-buttons>     
+    <ion-title>
+      Tienda JOJO
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
- <ion-list *ngFor="let i of productos" [routerLink]="['/prod-detail/' + i.id]">
+
+   <ion-list *ngFor="let i of productos" [routerLink]="['/prod-detail/' + i.id]">
 
   <ion-card>
     <img src="{{i.image}}" alt="">
-    <h4>{{i.name}}</h4>
+    <div class="titulo">
+      <h4>{{i.name}}</h4>
+    </div>
   </ion-card>
-  
  </ion-list>
+
+
+
 </ion-content>

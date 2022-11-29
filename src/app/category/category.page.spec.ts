@@ -3,6 +3,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { CategoryPage } from './category.page';
 
+/**
+ * 
 describe('CategoryPage', () => {
   let component: CategoryPage;
   let fixture: ComponentFixture<CategoryPage>;
@@ -22,3 +24,5 @@ describe('CategoryPage', () => {
     expect(component).toBeTruthy();
   });
 });
+
+ */

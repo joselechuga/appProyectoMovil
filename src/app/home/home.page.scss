@@ -15,6 +15,37 @@ ion-fab-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  top: 38%;
+
+  
+}
+
+.cajabtninicio{
+  background-image: linear-gradient(to bottom, #4e4f52, #525556, #555859, #5b5d5d, #606060);  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 89%;
+  height: 10vh;
+  width: 100%;
+}
+
+
+ion-card{
+  width: 190px;
+  height: 254px;
+  background: transparent;
+  border: 2px solid #07ff07;
+  box-shadow: 2px 2px 15px #000000 inset;
+  text-align: center;
+  color: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Pacifico';
+}
+
+ion-card:hover {
+  color: #07ff07;
+  box-shadow: 2px 2px 15px #07ff07 inset;
 }

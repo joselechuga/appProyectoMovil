@@ -3,6 +3,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { ProdDetailPage } from './prod-detail.page';
 
+/**
+ * 
 describe('ProdDetailPage', () => {
   let component: ProdDetailPage;
   let fixture: ComponentFixture<ProdDetailPage>;
@@ -22,3 +24,5 @@ describe('ProdDetailPage', () => {
     expect(component).toBeTruthy();
   });
 });
+
+ */

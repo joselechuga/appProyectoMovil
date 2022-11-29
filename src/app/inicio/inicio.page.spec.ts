@@ -3,6 +3,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { InicioPage } from './inicio.page';
 
+/**
+ * 
 describe('InicioPage', () => {
   let component: InicioPage;
   let fixture: ComponentFixture<InicioPage>;
@@ -22,3 +24,5 @@ describe('InicioPage', () => {
     expect(component).toBeTruthy();
   });
 });
+
+ */
