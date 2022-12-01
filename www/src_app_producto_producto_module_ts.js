@@ -90,13 +90,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ProductoPage": () => (/* binding */ ProductoPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4929);
 /* harmony import */ var _producto_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./producto.page.html?ngResource */ 4532);
 /* harmony import */ var _producto_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./producto.page.scss?ngResource */ 1353);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 2560);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 8987);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 6942);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 3819);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 3819);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 124);
+
 
 
 
@@ -105,8 +107,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ProductoPage = class ProductoPage {
-    constructor(http, navCtrl) {
+    constructor(http, activeroute, navCtrl) {
         this.http = http;
+        this.activeroute = activeroute;
         this.navCtrl = navCtrl;
         //splash = true;
         //tabBarElement: any;
@@ -140,10 +143,11 @@ let ProductoPage = class ProductoPage {
 };
 ProductoPage.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.NavController }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.ActivatedRoute },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.NavController }
 ];
-ProductoPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+ProductoPage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-producto',
         template: _producto_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_producto_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]

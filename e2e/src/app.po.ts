@@ -4,8 +4,12 @@ export class AppPage {
   navigateTo() {
     return browser.get('/');
   }
+  
+  getPageTitle() {
+    return element(by.css('ion-title')).getText();
+  }
 
   getParagraphText() {
-    return element(by.deepCss('app-root ion-content')).getText();
+    return element(by.css('app-inicio h2')).getText();
   }
 }

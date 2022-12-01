@@ -92,7 +92,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "MapaPage": () => (/* binding */ MapaPage)
 /* harmony export */ });
-/* harmony import */ var C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4929);
 /* harmony import */ var _mapa_page_html_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mapa.page.html?ngResource */ 5119);
 /* harmony import */ var _mapa_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mapa.page.scss?ngResource */ 4713);
@@ -114,7 +114,7 @@ let MapaPage = class MapaPage {
   createMap() {
     var _this = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       _this.map = yield _capacitor_google_maps__WEBPACK_IMPORTED_MODULE_3__.GoogleMap.create({
         id: 'my-map',
         apiKey: 'environment.mapsKey',
@@ -173,7 +173,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "registerWebPlugin": () => (/* binding */ registerWebPlugin),
 /* harmony export */   "setPlatform": () => (/* binding */ setPlatform)
 /* harmony export */ });
-/* harmony import */ var C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
 
 
 /*! Capacitor: https://capacitorjs.com/ - MIT License */
@@ -360,7 +360,7 @@ const createCapacitor = win => {
     let jsImplementation;
 
     const loadPluginImplementation = /*#__PURE__*/function () {
-      var _ref = (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      var _ref = (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
         if (!jsImplementation && platform in jsImplementations) {
           jsImplementation = typeof jsImplementations[platform] === 'function' ? jsImplementation = yield jsImplementations[platform]() : jsImplementation = jsImplementations[platform];
         } else if (capCustomPlatform !== null && !jsImplementation && 'web' in jsImplementations) {
@@ -414,7 +414,7 @@ const createCapacitor = win => {
         });
 
         if (prop === 'addListener') {
-          p.remove = /*#__PURE__*/(0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+          p.remove = /*#__PURE__*/(0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
             return remove();
           });
         }
@@ -442,7 +442,7 @@ const createCapacitor = win => {
       }, callback);
 
       const remove = /*#__PURE__*/function () {
-        var _ref3 = (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+        var _ref3 = (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
           const callbackId = yield call;
           removeListener({
             eventName,
@@ -458,7 +458,7 @@ const createCapacitor = win => {
       const p = new Promise(resolve => call.then(() => resolve({
         remove
       })));
-      p.remove = /*#__PURE__*/(0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      p.remove = /*#__PURE__*/(0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
         console.warn(`Using addListener() without 'await' is deprecated.`);
         yield remove();
       });
@@ -577,7 +577,7 @@ class WebPlugin {
     }
 
     const remove = /*#__PURE__*/function () {
-      var _ref5 = (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      var _ref5 = (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
         return _this.removeListener(eventName, listenerFunc);
       });
 
@@ -591,7 +591,7 @@ class WebPlugin {
     });
     Object.defineProperty(p, 'remove', {
       value: function () {
-        var _ref6 = (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+        var _ref6 = (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
           console.warn(`Using addListener() without 'await' is deprecated.`);
           yield remove();
         });
@@ -607,7 +607,7 @@ class WebPlugin {
   removeAllListeners() {
     var _this2 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       _this2.listeners = {};
 
       for (const listener in _this2.windowListeners) {
@@ -652,7 +652,7 @@ class WebPlugin {
   removeListener(eventName, listenerFunc) {
     var _this3 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const listeners = _this3.listeners[eventName];
 
       if (!listeners) {
@@ -701,7 +701,7 @@ const encode = str => encodeURIComponent(str).replace(/%(2[346B]|5E|60|7C)/g, de
 
 class CapacitorCookiesPluginWeb extends WebPlugin {
   setCookie(options) {
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       try {
         // Safely Encoded Key/Value
         const encodedKey = encode(options.key);
@@ -719,7 +719,7 @@ class CapacitorCookiesPluginWeb extends WebPlugin {
   }
 
   deleteCookie(options) {
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       try {
         document.cookie = `${options.key}=; Max-Age=0`;
       } catch (error) {
@@ -729,7 +729,7 @@ class CapacitorCookiesPluginWeb extends WebPlugin {
   }
 
   clearCookies() {
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       try {
         const cookies = document.cookie.split(';') || [];
 
@@ -745,7 +745,7 @@ class CapacitorCookiesPluginWeb extends WebPlugin {
   clearAllCookies() {
     var _this4 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       try {
         yield _this4.clearCookies();
       } catch (error) {
@@ -766,7 +766,7 @@ const CapacitorCookies = registerPlugin('CapacitorCookies', {
  */
 
 const readBlobAsBase64 = /*#__PURE__*/function () {
-  var _ref7 = (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (blob) {
+  var _ref7 = (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (blob) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
 
@@ -892,7 +892,7 @@ class CapacitorHttpPluginWeb extends WebPlugin {
    * @param options Options to build the HTTP request
    */
   request(options) {
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const requestInit = buildRequestInit(options, options.webFetchExtra);
       const urlParams = buildUrlParams(options.params, options.shouldEncodeUrlParams);
       const url = urlParams ? `${options.url}?${urlParams}` : options.url;
@@ -949,7 +949,7 @@ class CapacitorHttpPluginWeb extends WebPlugin {
   get(options) {
     var _this5 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _this5.request(Object.assign(Object.assign({}, options), {
         method: 'GET'
       }));
@@ -964,7 +964,7 @@ class CapacitorHttpPluginWeb extends WebPlugin {
   post(options) {
     var _this6 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _this6.request(Object.assign(Object.assign({}, options), {
         method: 'POST'
       }));
@@ -979,7 +979,7 @@ class CapacitorHttpPluginWeb extends WebPlugin {
   put(options) {
     var _this7 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _this7.request(Object.assign(Object.assign({}, options), {
         method: 'PUT'
       }));
@@ -994,7 +994,7 @@ class CapacitorHttpPluginWeb extends WebPlugin {
   patch(options) {
     var _this8 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _this8.request(Object.assign(Object.assign({}, options), {
         method: 'PATCH'
       }));
@@ -1009,7 +1009,7 @@ class CapacitorHttpPluginWeb extends WebPlugin {
   delete(options) {
     var _this9 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _this9.request(Object.assign(Object.assign({}, options), {
         method: 'DELETE'
       }));
@@ -1130,7 +1130,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "GoogleMap": () => (/* binding */ GoogleMap)
 /* harmony export */ });
-/* harmony import */ var C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
 /* harmony import */ var _capacitor_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @capacitor/core */ 5099);
 /* harmony import */ var _implementation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./implementation */ 1819);
 
@@ -1172,7 +1172,7 @@ class GoogleMap {
 
 
   static create(options, callback) {
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const newMap = new GoogleMap(options.id);
 
       if (!options.element) {
@@ -1224,7 +1224,7 @@ class GoogleMap {
   enableClustering() {
     var _this = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _implementation__WEBPACK_IMPORTED_MODULE_2__.CapacitorGoogleMaps.enableClustering({
         id: _this.id
       });
@@ -1240,7 +1240,7 @@ class GoogleMap {
   disableClustering() {
     var _this2 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _implementation__WEBPACK_IMPORTED_MODULE_2__.CapacitorGoogleMaps.disableClustering({
         id: _this2.id
       });
@@ -1257,7 +1257,7 @@ class GoogleMap {
   addMarker(marker) {
     var _this3 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const res = yield _implementation__WEBPACK_IMPORTED_MODULE_2__.CapacitorGoogleMaps.addMarker({
         id: _this3.id,
         marker
@@ -1276,7 +1276,7 @@ class GoogleMap {
   addMarkers(markers) {
     var _this4 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const res = yield _implementation__WEBPACK_IMPORTED_MODULE_2__.CapacitorGoogleMaps.addMarkers({
         id: _this4.id,
         markers
@@ -1295,7 +1295,7 @@ class GoogleMap {
   removeMarker(id) {
     var _this5 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _implementation__WEBPACK_IMPORTED_MODULE_2__.CapacitorGoogleMaps.removeMarker({
         id: _this5.id,
         markerId: id
@@ -1313,7 +1313,7 @@ class GoogleMap {
   removeMarkers(ids) {
     var _this6 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _implementation__WEBPACK_IMPORTED_MODULE_2__.CapacitorGoogleMaps.removeMarkers({
         id: _this6.id,
         markerIds: ids
@@ -1328,7 +1328,7 @@ class GoogleMap {
   destroy() {
     var _this7 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (_capacitor_core__WEBPACK_IMPORTED_MODULE_1__.Capacitor.getPlatform() == 'android') {
         _this7.disableScrolling();
       }
@@ -1351,7 +1351,7 @@ class GoogleMap {
   setCamera(config) {
     var _this8 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _implementation__WEBPACK_IMPORTED_MODULE_2__.CapacitorGoogleMaps.setCamera({
         id: _this8.id,
         config
@@ -1369,7 +1369,7 @@ class GoogleMap {
   setMapType(mapType) {
     var _this9 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _implementation__WEBPACK_IMPORTED_MODULE_2__.CapacitorGoogleMaps.setMapType({
         id: _this9.id,
         mapType
@@ -1387,7 +1387,7 @@ class GoogleMap {
   enableIndoorMaps(enabled) {
     var _this10 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _implementation__WEBPACK_IMPORTED_MODULE_2__.CapacitorGoogleMaps.enableIndoorMaps({
         id: _this10.id,
         enabled
@@ -1405,7 +1405,7 @@ class GoogleMap {
   enableTrafficLayer(enabled) {
     var _this11 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _implementation__WEBPACK_IMPORTED_MODULE_2__.CapacitorGoogleMaps.enableTrafficLayer({
         id: _this11.id,
         enabled
@@ -1425,7 +1425,7 @@ class GoogleMap {
   enableAccessibilityElements(enabled) {
     var _this12 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _implementation__WEBPACK_IMPORTED_MODULE_2__.CapacitorGoogleMaps.enableAccessibilityElements({
         id: _this12.id,
         enabled
@@ -1443,7 +1443,7 @@ class GoogleMap {
   enableCurrentLocation(enabled) {
     var _this13 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _implementation__WEBPACK_IMPORTED_MODULE_2__.CapacitorGoogleMaps.enableCurrentLocation({
         id: _this13.id,
         enabled
@@ -1461,7 +1461,7 @@ class GoogleMap {
   setPadding(padding) {
     var _this14 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _implementation__WEBPACK_IMPORTED_MODULE_2__.CapacitorGoogleMaps.setPadding({
         id: _this14.id,
         padding
@@ -1478,7 +1478,7 @@ class GoogleMap {
   getMapBounds() {
     var _this15 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _implementation__WEBPACK_IMPORTED_MODULE_2__.CapacitorGoogleMaps.getMapBounds({
         id: _this15.id
       });
@@ -1564,7 +1564,7 @@ class GoogleMap {
   setOnCameraIdleListener(callback) {
     var _this16 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (_this16.onCameraIdleListener) {
         _this16.onCameraIdleListener.remove();
       }
@@ -1587,7 +1587,7 @@ class GoogleMap {
   setOnBoundsChangedListener(callback) {
     var _this17 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (_this17.onBoundsChangedListener) {
         _this17.onBoundsChangedListener.remove();
       }
@@ -1610,7 +1610,7 @@ class GoogleMap {
   setOnCameraMoveStartedListener(callback) {
     var _this18 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (_this18.onCameraMoveStartedListener) {
         _this18.onCameraMoveStartedListener.remove();
       }
@@ -1633,7 +1633,7 @@ class GoogleMap {
   setOnClusterClickListener(callback) {
     var _this19 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (_this19.onClusterClickListener) {
         _this19.onClusterClickListener.remove();
       }
@@ -1656,7 +1656,7 @@ class GoogleMap {
   setOnClusterInfoWindowClickListener(callback) {
     var _this20 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (_this20.onClusterInfoWindowClickListener) {
         _this20.onClusterInfoWindowClickListener.remove();
       }
@@ -1679,7 +1679,7 @@ class GoogleMap {
   setOnInfoWindowClickListener(callback) {
     var _this21 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (_this21.onInfoWindowClickListener) {
         _this21.onInfoWindowClickListener.remove();
       }
@@ -1702,7 +1702,7 @@ class GoogleMap {
   setOnMapClickListener(callback) {
     var _this22 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (_this22.onMapClickListener) {
         _this22.onMapClickListener.remove();
       }
@@ -1725,7 +1725,7 @@ class GoogleMap {
   setOnMarkerClickListener(callback) {
     var _this23 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (_this23.onMarkerClickListener) {
         _this23.onMarkerClickListener.remove();
       }
@@ -1748,7 +1748,7 @@ class GoogleMap {
   setOnMarkerDragStartListener(callback) {
     var _this24 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (_this24.onMarkerDragStartListener) {
         _this24.onMarkerDragStartListener.remove();
       }
@@ -1771,7 +1771,7 @@ class GoogleMap {
   setOnMarkerDragListener(callback) {
     var _this25 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (_this25.onMarkerDragListener) {
         _this25.onMarkerDragListener.remove();
       }
@@ -1794,7 +1794,7 @@ class GoogleMap {
   setOnMarkerDragEndListener(callback) {
     var _this26 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (_this26.onMarkerDragEndListener) {
         _this26.onMarkerDragEndListener.remove();
       }
@@ -1817,7 +1817,7 @@ class GoogleMap {
   setOnMyLocationButtonClickListener(callback) {
     var _this27 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (_this27.onMyLocationButtonClickListener) {
         _this27.onMyLocationButtonClickListener.remove();
       }
@@ -1840,7 +1840,7 @@ class GoogleMap {
   setOnMyLocationClickListener(callback) {
     var _this28 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (_this28.onMyLocationClickListener) {
         _this28.onMyLocationClickListener.remove();
       }
@@ -1863,7 +1863,7 @@ class GoogleMap {
   removeAllMapListeners() {
     var _this29 = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (_this29.onBoundsChangedListener) {
         _this29.onBoundsChangedListener.remove();
 
@@ -1945,7 +1945,7 @@ class GoogleMap {
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYXBhLnBhZ2Uuc2NzcyJ9 */";
+module.exports = "capacitor-google-map {\n  height: 100vh;\n  width: 50vw;\n  display: inline block;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1hcGEucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtFQUNBLFdBQUE7RUFDQSxxQkFBQTtBQUNKIiwiZmlsZSI6Im1hcGEucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiY2FwYWNpdG9yLWdvb2dsZS1tYXAge1xyXG4gICAgaGVpZ2h0OjEwMHZoO1xyXG4gICAgd2lkdGg6IDUwdnc7XHJcbiAgICBkaXNwbGF5OmlubGluZVxyXG4gICAgYmxvY2s7XHJcbiAgICBcclxuICB9Il19 */";
 
 /***/ }),
 
@@ -1955,7 +1955,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>Google Maps</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <capacitor-google-map #map></capacitor-google-map>\n</ion-content>\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title>Google Maps</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <capacitor-google-map #map></capacitor-google-map>\r\n</ion-content>\r\n";
 
 /***/ })
 
