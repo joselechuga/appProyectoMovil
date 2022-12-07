@@ -1,171 +1,335 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["common"],{
 
-/***/ 4138:
-/*!*********************************************!*\
-  !*** ./src/app/service/database.service.ts ***!
-  \*********************************************/
+/***/ 6825:
+/*!*************************************!*\
+  !*** ./src/app/login/login.page.ts ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "DatabaseService": () => (/* binding */ DatabaseService)
+/* harmony export */   "LoginPage": () => (/* binding */ LoginPage)
 /* harmony export */ });
-/* harmony import */ var C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2560);
-/* harmony import */ var _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic-native/sqlite/ngx */ 2820);
+/* harmony import */ var C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var _login_page_html_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./login.page.html?ngResource */ 1729);
+/* harmony import */ var _login_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./login.page.scss?ngResource */ 7047);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 124);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 3819);
+/* harmony import */ var _service_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/api.service */ 9573);
 
 
 
 
-let DatabaseService = class DatabaseService {
-  constructor(sqlite) {
-    this.sqlite = sqlite;
-    this.tables = {
-      categories: "categories",
-      persons: "persons"
-    };
+
+
+
+
+let LoginPage = class LoginPage {
+  constructor(router, api, loading, toastController) {
+    this.router = router;
+    this.api = api;
+    this.loading = loading;
+    this.toastController = toastController;
+    this.validador = false;
+    this.mdl_correo = '';
+    this.mdl_pass = '';
+
+    if (window.localStorage.getItem('usuario') != null) {
+      this.api.validador = true;
+      this.router.navigate(['home']);
+    } else {
+      this.api.validador = false;
+      this.router.navigate(['login']);
+    }
   }
 
-  createDatabase() {
+  navegar() {
+    this.router.navigate(['registrar']);
+  }
+
+  ngOnInit() {
+    this.loading.create({
+      message: '',
+      spinner: 'bubbles'
+    }).then(res => {
+      res.dismiss();
+    });
+  }
+
+  usuarioLogin() {
+    let that = this;
+
+    if (this.mdl_pass.length < 4) {
+      that.mostrarMensaje('El minimo de caracteres para la contraseña es 4');
+    } else {
+      this.loading.create({
+        message: 'Iniciando sesion...',
+        spinner: 'bubbles'
+      }).then( /*#__PURE__*/function () {
+        var _ref = (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (res) {
+          res.present();
+          let data = yield that.api.usuarioLogin(that.mdl_correo, that.mdl_pass);
+
+          if (data['result'] == 'LOGIN OK') {
+            that.mostrarMensaje('Se ha iniciado sesion exitosamente');
+            localStorage.setItem('usuario', JSON.stringify({
+              user: that.mdl_correo
+            }));
+            that.api.validador = true;
+            that.router.navigate(['catalogo-productos']);
+            localStorage.setItem('ingresado', 'true');
+            console.log(data);
+          } else {
+            that.mostrarMensaje('El correo o la contraseña es incorrecta');
+            console.log(data);
+          }
+
+          res.dismiss();
+        });
+
+        return function (_x) {
+          return _ref.apply(this, arguments);
+        };
+      }());
+    }
+  }
+
+  mostrarMensaje(mensaje) {
     var _this = this;
 
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      yield _this.sqlite.create({
-        name: "ionic_sqlite_crud",
-        location: "default"
-      }).then(db => {
-        _this.databaseObj = db;
-      }).catch(e => {
-        alert("Error Al Crear La Base De Datos " + JSON.stringify(e));
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const toast = yield _this.toastController.create({
+        message: mensaje,
+        duration: 3000,
+        position: 'bottom'
       });
-      yield _this.createTables();
-    })();
-  }
-
-  createTables() {
-    var _this2 = this;
-
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      yield _this2.databaseObj.executeSql(`CREATE TABLE IF NOT EXISTS ${_this2.tables.categories} (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(255) NOT NULL UNIQUE)`, []);
-      yield _this2.databaseObj.executeSql(`CREATE TABLE IF NOT EXISTS ${_this2.tables.persons} (id INTEGER PRIMARY KEY AUTOINCREMENT, category_id INTEGER UNSIGNED NOT NULL, name VARCHAR(255) NOT NULL)`, []);
-    })();
-  }
-
-  addCategory(name) {
-    var _this3 = this;
-
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      return _this3.databaseObj.executeSql(`INSERT INTO ${_this3.tables.categories} (name) VALUES ('${name}')`, []).then(() => {
-        return "Nueva Categoria Creada";
-      }).catch(e => {
-        if (e.code === 6) {
-          return "Esta Categoria Ya Existe";
-        }
-
-        return "Error Al Crear La Categoria " + JSON.stringify(e);
-      });
-    })();
-  }
-
-  getCategories() {
-    var _this4 = this;
-
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      return _this4.databaseObj.executeSql(`SELECT * FROM ${_this4.tables.categories} ORDER BY name ASC`, []).then(res => {
-        return res;
-      }).catch(e => {
-        return "Error Al Obtener Categories " + JSON.stringify(e);
-      });
-    })();
-  }
-
-  deleteCategory(id) {
-    var _this5 = this;
-
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      return _this5.databaseObj.executeSql(`DELETE FROM ${_this5.tables.categories} WHERE id = ${id}`, []).then(() => {
-        return "Categoria Eliminada";
-      }).catch(e => {
-        return "Error Al Eliminar La Categoria " + JSON.stringify(e);
-      });
-    })();
-  }
-
-  editCategory(name, id) {
-    var _this6 = this;
-
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      return _this6.databaseObj.executeSql(`UPDATE ${_this6.tables.categories} SET name = '${name}' WHERE id = ${id}`, []).then(() => {
-        return "Categoria Actualizada";
-      }).catch(e => {
-        if (e.code === 6) {
-          return "La Catagoria Ya Existe";
-        }
-
-        return "Error Al Actualizar La Categoria " + JSON.stringify(e);
-      });
-    })();
-  }
-
-  addPerson(name, category_id) {
-    var _this7 = this;
-
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      return _this7.databaseObj.executeSql(`INSERT INTO ${_this7.tables.persons} (name, category_id) VALUES ('${name}', ${category_id})`, []).then(() => {
-        return "Personal Creado";
-      }).catch(e => {
-        return "Error Al Crear al Personal " + JSON.stringify(e);
-      });
-    })();
-  }
-
-  getPersons() {
-    var _this8 = this;
-
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      return _this8.databaseObj.executeSql(`SELECT persons.id, persons.category_id, persons.name as person, categories.name as category FROM persons INNER JOIN categories ON categories.id = persons.category_id ORDER BY person ASC`, []).then(res => {
-        return res;
-      }).catch(e => {
-        return "Error Al Obtener Al Personal " + JSON.stringify(e);
-      });
-    })();
-  }
-
-  deletePerson(id) {
-    var _this9 = this;
-
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      return _this9.databaseObj.executeSql(`DELETE FROM ${_this9.tables.persons} WHERE id = ${id}`, []).then(() => {
-        return "Personal Eliminado";
-      }).catch(e => {
-        return "Error Al Eliminar Al Personal " + JSON.stringify(e);
-      });
-    })();
-  }
-
-  editPerson(name, category_id, id) {
-    var _this10 = this;
-
-    return (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      return _this10.databaseObj.executeSql(`UPDATE ${_this10.tables.persons} SET name = '${name}', category_id = ${category_id} WHERE id = ${id}`, []).then(() => {
-        return "Personal Actualizado";
-      }).catch(e => {
-        return "Error al Actualizar Al Personal " + JSON.stringify(e);
-      });
+      yield toast.present();
     })();
   }
 
 };
 
-DatabaseService.ctorParameters = () => [{
-  type: _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_1__.SQLite
+LoginPage.ctorParameters = () => [{
+  type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router
+}, {
+  type: _service_api_service__WEBPACK_IMPORTED_MODULE_3__.ApiService
+}, {
+  type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.LoadingController
+}, {
+  type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.ToastController
 }];
 
-DatabaseService = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([(0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injectable)({
-  providedIn: "root"
-})], DatabaseService);
+LoginPage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([(0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
+  selector: 'app-login',
+  template: _login_page_html_ngResource__WEBPACK_IMPORTED_MODULE_1__,
+  styles: [_login_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_2__]
+})], LoginPage);
+
+
+/***/ }),
+
+/***/ 7395:
+/*!*********************************************!*\
+  !*** ./src/app/registrar/registrar.page.ts ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RegistrarPage": () => (/* binding */ RegistrarPage)
+/* harmony export */ });
+/* harmony import */ var C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var _registrar_page_html_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./registrar.page.html?ngResource */ 8341);
+/* harmony import */ var _registrar_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./registrar.page.scss?ngResource */ 4887);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 124);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 3819);
+/* harmony import */ var _service_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/api.service */ 9573);
+
+
+
+
+
+
+
+
+let RegistrarPage = class RegistrarPage {
+  constructor(router, api, loading, toastController) {
+    this.router = router;
+    this.api = api;
+    this.loading = loading;
+    this.toastController = toastController;
+    this.mdl_nombre = '';
+    this.mdl_apellido = '';
+    this.mdl_correo = '';
+    this.mdl_pass = '';
+    this.mdl_pass2 = '';
+  }
+
+  ngOnInit() {
+    this.loading.create({
+      message: '',
+      spinner: 'bubbles'
+    }).then(res => {
+      res.dismiss();
+    });
+  }
+
+  usuarioAlmacenar() {
+    let that = this;
+
+    if (this.mdl_correo == '' && this.mdl_pass == '' && this.mdl_nombre == '' && this.mdl_apellido == '') {
+      that.mostrarMensaje('Todos los campos son obligatorio');
+    } else if (this.mdl_pass.length < 4) {
+      that.mostrarMensaje('El minimo de caracteres para la contraseña es 4');
+    } else if (this.mdl_pass != this.mdl_pass2) {
+      that.mostrarMensaje('Las contraseñas no coinciden.');
+    } else {
+      this.loading.create({
+        message: 'Creando usuario...',
+        spinner: 'bubbles'
+      }).then( /*#__PURE__*/function () {
+        var _ref = (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (res) {
+          res.present();
+          let data = yield that.api.usuarioAlmacenar(that.mdl_correo, that.mdl_pass, that.mdl_nombre, that.mdl_apellido);
+
+          if (data['result'][0].RESPUESTA == 'OK') {
+            that.mostrarMensaje('El usuario se registro correctamente');
+            that.router.navigate(['login']);
+            console.log(data);
+          } else {
+            that.mostrarMensaje('El correo ya existe');
+            console.log(data);
+          }
+
+          res.dismiss();
+        });
+
+        return function (_x) {
+          return _ref.apply(this, arguments);
+        };
+      }());
+    }
+  }
+
+  mostrarMensaje(mensaje) {
+    var _this = this;
+
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const toast = yield _this.toastController.create({
+        message: mensaje,
+        duration: 5000,
+        position: 'bottom'
+      });
+      yield toast.present();
+    })();
+  }
+
+};
+
+RegistrarPage.ctorParameters = () => [{
+  type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router
+}, {
+  type: _service_api_service__WEBPACK_IMPORTED_MODULE_3__.ApiService
+}, {
+  type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.LoadingController
+}, {
+  type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.ToastController
+}];
+
+RegistrarPage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([(0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
+  selector: 'app-registrar',
+  template: _registrar_page_html_ngResource__WEBPACK_IMPORTED_MODULE_1__,
+  styles: [_registrar_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_2__]
+})], RegistrarPage);
+
+
+/***/ }),
+
+/***/ 9573:
+/*!****************************************!*\
+  !*** ./src/app/service/api.service.ts ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ApiService": () => (/* binding */ ApiService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ 8987);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ 124);
+
+
+
+
+let ApiService = class ApiService {
+    constructor(http, router) {
+        this.http = http;
+        this.router = router;
+        this.rutaBase = 'https://fer-sepulveda.cl/API_PRUEBA2/api-service.php';
+        this.validador = false;
+    }
+    canActivate() {
+        if (this.validador) {
+            return true;
+        }
+        else {
+            this.router.navigate(['login']);
+            return false;
+        }
+    }
+    usuarioAlmacenar(correo, contrasena, nombre, apellido) {
+        let that = this;
+        return new Promise(resolve => {
+            resolve(that.http.post(that.rutaBase, {
+                nombreFuncion: 'UsuarioAlmacenar',
+                parametros: [correo, contrasena, nombre, apellido]
+            }).toPromise());
+        });
+    }
+    usuarioLogin(correo, contrasena) {
+        let that = this;
+        return new Promise(resolve => {
+            resolve(that.http.post(that.rutaBase, {
+                nombreFuncion: 'UsuarioLogin',
+                parametros: [correo, contrasena]
+            }).toPromise());
+        });
+    }
+    usuarioObtenerNombre() {
+        let that = this;
+        const user = JSON.parse(localStorage.getItem('usuario')).user;
+        return new Promise(resolve => {
+            resolve(that.http.get(that.rutaBase
+                + '?nombreFuncion=UsuarioObtenerNombre&correo=' + user).toPromise());
+        });
+    }
+    usuarioModificarContrasena(correo, contrasenaNueva, contrasenaActual) {
+        let that = this;
+        return new Promise(resolve => {
+            resolve(that.http.patch(that.rutaBase, {
+                nombreFuncion: 'UsuarioModificarContrasena',
+                parametros: [correo, contrasenaNueva, contrasenaActual]
+            }).toPromise());
+        });
+    }
+};
+ApiService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpClient },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__.Router }
+];
+ApiService = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injectable)({
+        providedIn: 'root'
+    })
+], ApiService);
+
 
 
 /***/ }),
@@ -395,7 +559,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "a": () => (/* binding */ attachComponent),
 /* harmony export */   "d": () => (/* binding */ detachComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
 /* harmony import */ var _helpers_4d272360_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers-4d272360.js */ 9158);
 
 
@@ -405,7 +569,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const attachComponent = /*#__PURE__*/function () {
-  var _ref = (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps, inline) {
+  var _ref = (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps, inline) {
     var _a;
 
     if (delegate) {
@@ -454,7 +618,7 @@ const CoreDelegate = () => {
   let Reference;
 
   const attachViewToDom = /*#__PURE__*/function () {
-    var _ref2 = (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (parentElement, userComponent, userComponentProps = {}, cssClasses = []) {
+    var _ref2 = (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (parentElement, userComponent, userComponentProps = {}, cssClasses = []) {
       var _a, _b;
 
       BaseComponent = parentElement;
@@ -766,7 +930,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "r": () => (/* binding */ resetContentScrollY),
 /* harmony export */   "s": () => (/* binding */ scrollToTop)
 /* harmony export */ });
-/* harmony import */ var C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
 /* harmony import */ var _helpers_4d272360_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers-4d272360.js */ 9158);
 /* harmony import */ var _index_c4b11676_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-c4b11676.js */ 9273);
 
@@ -803,7 +967,7 @@ const isIonContent = el => el && el.tagName === ION_CONTENT_TAG_NAME;
 
 
 const getScrollElement = /*#__PURE__*/function () {
-  var _ref = (0,C_Users_evild_Documents_Repositorio_repo_appProyectoMovil_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (el) {
+  var _ref = (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (el) {
     if (isIonContent(el)) {
       yield new Promise(resolve => (0,_helpers_4d272360_js__WEBPACK_IMPORTED_MODULE_1__.c)(el, resolve));
       return el.getScrollElement();
@@ -1485,6 +1649,46 @@ const createSwipeBackGesture = (el, canStartHandler, onStartHandler, onMoveHandl
 };
 
 
+
+/***/ }),
+
+/***/ 7047:
+/*!**************************************************!*\
+  !*** ./src/app/login/login.page.scss?ngResource ***!
+  \**************************************************/
+/***/ ((module) => {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJsb2dpbi5wYWdlLnNjc3MifQ== */";
+
+/***/ }),
+
+/***/ 4887:
+/*!**********************************************************!*\
+  !*** ./src/app/registrar/registrar.page.scss?ngResource ***!
+  \**********************************************************/
+/***/ ((module) => {
+
+module.exports = ".head {\n  font-family: \"Righteous\", cursive;\n  -webkit-text-stroke: 0.5px rgba(0, 140, 255, 0.962);\n  font-size: 20px;\n}\n\n.nombres {\n  display: flex;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlZ2lzdHJhci5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxpQ0FBQTtFQUNBLG1EQUFBO0VBQ0EsZUFBQTtBQUNKOztBQUVBO0VBQ0ksYUFBQTtBQUNKIiwiZmlsZSI6InJlZ2lzdHJhci5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaGVhZHtcclxuICAgIGZvbnQtZmFtaWx5OiAnUmlnaHRlb3VzJywgY3Vyc2l2ZTtcclxuICAgIC13ZWJraXQtdGV4dC1zdHJva2U6IDAuNXB4IHJnYmEoMCwgMTQwLCAyNTUsIDAuOTYyKTtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxufVxyXG5cclxuLm5vbWJyZXN7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG59XHJcbiJdfQ== */";
+
+/***/ }),
+
+/***/ 1729:
+/*!**************************************************!*\
+  !*** ./src/app/login/login.page.html?ngResource ***!
+  \**************************************************/
+/***/ ((module) => {
+
+module.exports = "<ion-header>\r\n  <ion-toolbar class=\"color-body\">\r\n    <ion-title class=\"color-title\">Inicio de sesion</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"ion-padding\">\r\n  <div>\r\n    <img src=\"../../assets/fondos/diologin.jpg\" alt=\"\">\r\n  </div>\r\n  <ion-item>\r\n    <ion-label position=\"floating\">Correo</ion-label>\r\n    <ion-input type=\"email\" placeholder=\"email@mail.com\" [(ngModel)]=\"mdl_correo\"></ion-input>\r\n  </ion-item>\r\n  <ion-item>\r\n    <ion-label position=\"floating\">Contraseña</ion-label>\r\n    <ion-input type=\"password\" placeholder=\"*********\" [(ngModel)]=\"mdl_pass\"></ion-input>\r\n  </ion-item>\r\n  <br>\r\n  <ion-button (click)=\"usuarioLogin()\" expand=\"block\" class=\"color-button\">\r\n    Ingresar\r\n    <ion-icon name=\"people-outline\"></ion-icon>\r\n  </ion-button>\r\n\r\n</ion-content>";
+
+/***/ }),
+
+/***/ 8341:
+/*!**********************************************************!*\
+  !*** ./src/app/registrar/registrar.page.html?ngResource ***!
+  \**********************************************************/
+/***/ ((module) => {
+
+module.exports = "<ion-header>\r\n  <ion-toolbar class=\"color-body\">\r\n    <ion-title class=\"head\">Registro de Usuario</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n    <div class=\"nombres\">\r\n      <ion-item>\r\n        <ion-label position=\"floating\"><ion-icon name=\"person-outline\"></ion-icon> Nombre</ion-label>\r\n        <ion-input [(ngModel)]=\"mdl_nombre\"></ion-input>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"floating\"><ion-icon name=\"person-outline\"></ion-icon> Apellido</ion-label>\r\n        <ion-input [(ngModel)]=\"mdl_apellido\"></ion-input>\r\n      </ion-item>\r\n    </div>\r\n    <ion-item>\r\n      <ion-label position=\"floating\"><ion-icon name=\"mail-outline\" position=\"floating\"></ion-icon> Correo </ion-label>\r\n      <ion-input type=\"email\" placeholder=\"email@mail.com\" [(ngModel)]=\"mdl_correo\"></ion-input>\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-label position=\"floating\"><ion-icon name=\"bag-outline\"></ion-icon> Contraseña</ion-label>\r\n      <ion-input type=\"password\" placeholder=\"*********\" [(ngModel)]=\"mdl_pass\"></ion-input>\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-label position=\"floating\"><ion-icon name=\"bag-outline\"></ion-icon> Repita Contraseña</ion-label>\r\n      <ion-input type=\"password\" placeholder=\"*********\" [(ngModel)]=\"mdl_pass2\"></ion-input>\r\n    </ion-item>\r\n    <br>\r\n    <ion-button expand=\"block\" (click)=\"usuarioAlmacenar()\" >REGISTRAR</ion-button>\r\n</ion-content>\r\n";
 
 /***/ })
 

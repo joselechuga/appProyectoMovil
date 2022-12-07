@@ -24,8 +24,18 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        redirectTo: 'login',
+        redirectTo: 'inicio',
         pathMatch: 'full'
+    },
+    {
+        path: 'mapa',
+        redirectTo: 'e404',
+        pathMatch: 'full'
+    },
+    {
+        path: 'inicio',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_inicio_inicio_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./inicio/inicio.module */ 3185)).then(m => m.InicioPageModule),
+        canActivate: [_no_ingresado_guard__WEBPACK_IMPORTED_MODULE_1__.NoIngresadoGuard]
     },
     {
         path: 'home',
@@ -34,17 +44,16 @@ const routes = [
     },
     {
         path: 'login',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_login_login_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./login/login.module */ 107)).then(m => m.LoginPageModule),
-        canActivate: [_no_ingresado_guard__WEBPACK_IMPORTED_MODULE_1__.NoIngresadoGuard]
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./login/login.module */ 107)).then(m => m.LoginPageModule),
     },
     {
-        path: 'registro',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_registro_registro_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./registro/registro.module */ 636)).then(m => m.RegistroPageModule),
+        path: 'registrar',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_registrar_registrar_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./registrar/registrar.module */ 7811)).then(m => m.RegistrarPageModule),
         canActivate: [_no_ingresado_guard__WEBPACK_IMPORTED_MODULE_1__.NoIngresadoGuard]
     },
     {
         path: 'producto',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_producto_producto_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./producto/producto.module */ 3386)).then(m => m.ProductoPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_producto_producto_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./producto/producto.module */ 3386)).then(m => m.ProductoPageModule),
     },
     {
         path: 'perfil',
@@ -64,15 +73,15 @@ const routes = [
     },
     {
         path: 'category',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_category_category_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./category/category.module */ 6914)).then(m => m.CategoryPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_category_category_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./category/category.module */ 6914)).then(m => m.CategoryPageModule)
     },
     {
         path: 'person',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_person_person_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./person/person.module */ 6280)).then(m => m.PersonPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_person_person_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./person/person.module */ 6280)).then(m => m.PersonPageModule)
     },
     {
         path: 'person',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_person_person_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./person/person.module */ 6280)).then(m => m.PersonPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_person_person_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./person/person.module */ 6280)).then(m => m.PersonPageModule)
     },
     {
         path: 'productos/:id',
@@ -83,12 +92,20 @@ const routes = [
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_mapa_mapa_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./mapa/mapa.module */ 964)).then(m => m.MapaPageModule)
     },
     {
-        path: 'detalles-perfil',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_detalles-perfil_detalles-perfil_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./detalles-perfil/detalles-perfil.module */ 7718)).then(m => m.DetallesPerfilPageModule)
-    },
-    {
         path: 'mapa',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_mapa_mapa_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./mapa/mapa.module */ 964)).then(m => m.MapaPageModule)
+    },
+    {
+        path: 'e404',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_e404_e404_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./e404/e404.module */ 7284)).then(m => m.E404PageModule)
+    },
+    {
+        path: 'catalogo-productos',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_catalogo-productos_catalogo-productos_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./catalogo-productos/catalogo-productos.module */ 474)).then(m => m.CatalogoProductosPageModule)
+    },
+    {
+        path: 'prod-detail/:id',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_prod-detail_prod-detail_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./prod-detail/prod-detail.module */ 4334)).then(m => m.ProdDetailPageModule)
     },
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -117,39 +134,55 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppComponent": () => (/* binding */ AppComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4929);
-/* harmony import */ var _app_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component.html?ngResource */ 3383);
-/* harmony import */ var _app_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component.scss?ngResource */ 9259);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2560);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 3819);
+/* harmony import */ var C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var _app_component_html_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component.html?ngResource */ 3383);
+/* harmony import */ var _app_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component.scss?ngResource */ 9259);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 3819);
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/storage */ 190);
+
+
 
 
 
 
 
 let AppComponent = class AppComponent {
-    constructor(navCtrl) {
-        this.navCtrl = navCtrl;
-    }
-    salir() {
-        localStorage.removeItem('ingresado');
-        this.navCtrl.navigateRoot('login');
-        console.log('salir');
-    }
-    ngOnInit() {
-    }
-};
-AppComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.NavController }
-];
-AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
-        selector: 'app-root',
-        template: _app_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
-        styles: [_app_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
-    })
-], AppComponent);
+  constructor(navCtrl, storage) {
+    this.navCtrl = navCtrl;
+    this.storage = storage;
+  }
 
+  salir() {
+    localStorage.removeItem('ingresado');
+    this.navCtrl.navigateRoot('login');
+    console.log('salir');
+  }
+
+  ngOnInit() {
+    var _this = this;
+
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      // If using a custom driver:
+      // await this.storage.defineDriver(MyCustomDriver)
+      yield _this.storage.create();
+    })();
+  }
+
+};
+
+AppComponent.ctorParameters = () => [{
+  type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.NavController
+}, {
+  type: _ionic_storage__WEBPACK_IMPORTED_MODULE_3__.Storage
+}];
+
+AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([(0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+  selector: 'app-root',
+  template: _app_component_html_ngResource__WEBPACK_IMPORTED_MODULE_1__,
+  styles: [_app_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_2__]
+})], AppComponent);
 
 
 /***/ }),
@@ -165,18 +198,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser */ 4497);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/router */ 124);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 3819);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ 4497);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 124);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic/angular */ 3819);
 /* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ 7954);
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ 1714);
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ 5041);
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ 158);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/http */ 8987);
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser/animations */ 7146);
-/* harmony import */ var _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/sqlite/ngx */ 2820);
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/storage */ 190);
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ 5041);
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ 158);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common/http */ 8987);
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser/animations */ 7146);
+/* harmony import */ var _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/sqlite/ngx */ 2820);
+/* harmony import */ var _service_database_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./service/database.service */ 4138);
+
+
 
 
 
@@ -191,18 +228,20 @@ __webpack_require__.r(__webpack_exports__);
 
 let AppModule = class AppModule {
 };
-AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.NgModule)({
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__.AppComponent],
+AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.NgModule)({
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__.AppComponent],
         entryComponents: [],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__.BrowserModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__.BrowserAnimationsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.IonicModule.forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_3__.AppRoutingModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__.HttpClientModule],
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__.BrowserModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__.BrowserAnimationsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_11__.IonicModule.forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_4__.AppRoutingModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_12__.HttpClientModule],
         providers: [
             _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_1__.StatusBar,
             _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_0__.SplashScreen,
-            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_11__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.IonicRouteStrategy },
-            _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_4__.SQLite,
+            _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_5__.SQLite,
+            _ionic_storage__WEBPACK_IMPORTED_MODULE_2__.Storage,
+            _service_database_service__WEBPACK_IMPORTED_MODULE_6__.DatabaseService,
+            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_11__.IonicRouteStrategy }
         ],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__.AppComponent]
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__.AppComponent]
     })
 ], AppModule);
 
@@ -236,7 +275,7 @@ let IngresadoGuard = class IngresadoGuard {
             return true;
         }
         else {
-            this.navCtrl.navigateRoot('login');
+            this.navCtrl.navigateRoot('inicio');
             return false;
         }
     }
@@ -277,7 +316,7 @@ let NoIngresadoGuard = class NoIngresadoGuard {
     }
     canActivate(route, state) {
         if (localStorage.getItem('ingresado')) {
-            this.navCtrl.navigateRoot('producto');
+            this.navCtrl.navigateRoot('catalogo-productos');
             return false;
         }
         else {
@@ -294,6 +333,180 @@ NoIngresadoGuard = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
     })
 ], NoIngresadoGuard);
 
+
+
+/***/ }),
+
+/***/ 4138:
+/*!*********************************************!*\
+  !*** ./src/app/service/database.service.ts ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DatabaseService": () => (/* binding */ DatabaseService)
+/* harmony export */ });
+/* harmony import */ var C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic-native/sqlite/ngx */ 2820);
+
+
+
+
+let DatabaseService = class DatabaseService {
+  constructor(sqlite) {
+    this.sqlite = sqlite;
+    this.tables = {
+      categories: "categories",
+      persons: "persons"
+    };
+  }
+
+  createDatabase() {
+    var _this = this;
+
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      yield _this.sqlite.create({
+        name: "ionic_sqlite_crud",
+        location: "default"
+      }).then(db => {
+        _this.databaseObj = db;
+      }).catch(e => {
+        alert("Error Al Crear La Base De Datos " + JSON.stringify(e));
+      });
+      yield _this.createTables();
+    })();
+  }
+
+  createTables() {
+    var _this2 = this;
+
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      yield _this2.databaseObj.executeSql(`CREATE TABLE IF NOT EXISTS ${_this2.tables.categories} (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(255) NOT NULL UNIQUE)`, []);
+      yield _this2.databaseObj.executeSql(`CREATE TABLE IF NOT EXIST sesion_data (
+        user.name TEXT PRIMARY KEY NOT NULL,
+        password INTEGER NOT NULL,
+        active INTEGER(1) NOT NULL)`, []);
+      yield _this2.databaseObj.executeSql(`CREATE TABLE IF NOT EXISTS ${_this2.tables.persons} (id INTEGER PRIMARY KEY AUTOINCREMENT, category_id INTEGER UNSIGNED NOT NULL, name VARCHAR(255) NOT NULL)`, []);
+    })();
+  }
+
+  addCategory(name) {
+    var _this3 = this;
+
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      return _this3.databaseObj.executeSql(`INSERT INTO ${_this3.tables.categories} (name) VALUES ('${name}')`, []).then(() => {
+        return "Nueva Categoria Creada";
+      }).catch(e => {
+        if (e.code === 6) {
+          return "Esta Categoria Ya Existe";
+        }
+
+        return "Error Al Crear La Categoria " + JSON.stringify(e);
+      });
+    })();
+  }
+
+  getCategories() {
+    var _this4 = this;
+
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      return _this4.databaseObj.executeSql(`SELECT * FROM ${_this4.tables.categories} ORDER BY name ASC`, []).then(res => {
+        return res;
+      }).catch(e => {
+        return "Error Al Obtener Categories " + JSON.stringify(e);
+      });
+    })();
+  }
+
+  deleteCategory(id) {
+    var _this5 = this;
+
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      return _this5.databaseObj.executeSql(`DELETE FROM ${_this5.tables.categories} WHERE id = ${id}`, []).then(() => {
+        return "Categoria Eliminada";
+      }).catch(e => {
+        return "Error Al Eliminar La Categoria " + JSON.stringify(e);
+      });
+    })();
+  }
+
+  editCategory(name, id) {
+    var _this6 = this;
+
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      return _this6.databaseObj.executeSql(`UPDATE ${_this6.tables.categories} SET name = '${name}' WHERE id = ${id}`, []).then(() => {
+        return "Categoria Actualizada";
+      }).catch(e => {
+        if (e.code === 6) {
+          return "La Catagoria Ya Existe";
+        }
+
+        return "Error Al Actualizar La Categoria " + JSON.stringify(e);
+      });
+    })();
+  }
+
+  addPerson(name, category_id) {
+    var _this7 = this;
+
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      return _this7.databaseObj.executeSql(`INSERT INTO ${_this7.tables.persons} (name, category_id) VALUES ('${name}', ${category_id})`, []).then(() => {
+        return "Personal Creado";
+      }).catch(e => {
+        return "Error Al Crear al Personal " + JSON.stringify(e);
+      });
+    })();
+  }
+
+  getPersons() {
+    var _this8 = this;
+
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      return _this8.databaseObj.executeSql(`SELECT persons.id, persons.category_id, persons.name as person, categories.name as category FROM persons INNER JOIN categories ON categories.id = persons.category_id ORDER BY person ASC`, []).then(res => {
+        return res;
+      }).catch(e => {
+        return "Error Al Obtener Al Personal " + JSON.stringify(e);
+      });
+    })();
+  }
+
+  deletePerson(id) {
+    var _this9 = this;
+
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      return _this9.databaseObj.executeSql(`DELETE FROM ${_this9.tables.persons} WHERE id = ${id}`, []).then(() => {
+        return "Personal Eliminado";
+      }).catch(e => {
+        return "Error Al Eliminar Al Personal " + JSON.stringify(e);
+      });
+    })();
+  }
+
+  editPerson(name, category_id, id) {
+    var _this10 = this;
+
+    return (0,C_Users_medin_repoPrograMovil_appProyectoMovil_9_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      return _this10.databaseObj.executeSql(`UPDATE ${_this10.tables.persons} SET name = '${name}', category_id = ${category_id} WHERE id = ${id}`, []).then(() => {
+        return "Personal Actualizado";
+      }).catch(e => {
+        return "Error al Actualizar Al Personal " + JSON.stringify(e);
+      });
+    })();
+  }
+
+};
+
+DatabaseService.ctorParameters = () => [{
+  type: _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_1__.SQLite
+}];
+
+DatabaseService = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([(0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injectable)({
+  providedIn: "root"
+})], DatabaseService);
 
 
 /***/ }),
@@ -618,7 +831,7 @@ module.exports = "ion-content {\n  background-color: var(--ion-color-estip2);\n}
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\">\r\n      <ion-header color=\"estilopropio\">\r\n        <ion-toolbar>\r\n          <ion-title>Menu</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/producto'\">\r\n              <ion-icon slot=\"start\" [name]=\"'list'\"></ion-icon>\r\n              <ion-label>\r\n                Producto\r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/datos'\">\r\n              <ion-icon slot=\"start\" name=\"globe-sharp\"></ion-icon>\r\n              <ion-label>\r\n                datos\r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/rickymorty'\">\r\n              <ion-icon slot=\"start\" name=\"earth-sharp\"></ion-icon>\r\n              <ion-label>\r\n                Api Rick & Morty \r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'root'\" [routerLink]=\"'/perfil'\">\r\n              <ion-icon slot=\"start\" [name]=\"'person-outline'\"></ion-icon>\r\n              <ion-label>\r\n                Perfil\r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'categoria'\" [routerLink]=\"'/category'\">\r\n              <ion-icon slot=\"start\" [name]=\"'albums-outline'\"></ion-icon>\r\n              <ion-label>\r\n                Categoria\r\n              </ion-label>\r\n            </ion-item>\r\n\r\n            <ion-item [routerDirection]=\"'personal'\" [routerLink]=\"'/person'\">\r\n              <ion-icon slot=\"start\" [name]=\"'accessibility-outline'\"></ion-icon>\r\n              <ion-label>\r\n                Personal\r\n              </ion-label>\r\n            </ion-item>\r\n            \r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/ubicacion'\">\r\n              <ion-icon slot=\"start\" name=\"map-sharp\"></ion-icon>\r\n              <ion-label>\r\n                Ubicación GPS\r\n              </ion-label>\r\n\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/mapa'\">\r\n              <ion-icon slot=\"start\" name=\"map-sharp\"></ion-icon>\r\n              <ion-label>\r\n                Google Maps\r\n              </ion-label>\r\n            </ion-item>\r\n\r\n            <ion-item (click)=\"salir()\" [routerDirection]=\"'home'\" [routerLink]=\"'/login'\">\r\n              <ion-icon slot=\"start\" name=\"log-out-outline\"></ion-icon>\r\n              <ion-label>\r\n                Cerrar sesion\r\n              </ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu> \r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n\r\n<!--\r\nCOMPONENT ORIGINAL \r\n<ion-app>\r\n  <ion-router-outlet></ion-router-outlet>\r\n</ion-app>\r\n-->";
+module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\">\r\n      <ion-header color=\"estilopropio\">\r\n        <ion-toolbar>\r\n          <ion-title>Menu</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/home'\">\r\n              <ion-icon slot=\"start\" name=\"home-sharp\"></ion-icon>\r\n              <ion-label>\r\n                Inicio\r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/producto'\">\r\n              <ion-icon slot=\"start\" [name]=\"'list'\"></ion-icon>\r\n              <ion-label>\r\n                Producto\r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/catalogo-productos'\">\r\n              <ion-icon slot=\"start\" [name]=\"'list'\"></ion-icon>\r\n              <ion-label>\r\n                Catalogo\r\n              </ion-label>\r\n            </ion-item>\r\n           \r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/datos'\">\r\n              <ion-icon slot=\"start\" name=\"globe-sharp\"></ion-icon>\r\n              <ion-label>\r\n                datos\r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/rickymorty'\">\r\n              <ion-icon slot=\"start\" name=\"earth-sharp\"></ion-icon>\r\n              <ion-label>\r\n                Api Rick & Morty \r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'root'\" [routerLink]=\"'/perfil'\">\r\n              <ion-icon slot=\"start\" [name]=\"'person-outline'\"></ion-icon>\r\n              <ion-label>\r\n                Perfil\r\n              </ion-label>\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'categoria'\" [routerLink]=\"'/category'\">\r\n              <ion-icon slot=\"start\" [name]=\"'albums-outline'\"></ion-icon>\r\n              <ion-label>\r\n                Categoria\r\n              </ion-label>\r\n            </ion-item>\r\n\r\n            <ion-item [routerDirection]=\"'personal'\" [routerLink]=\"'/person'\">\r\n              <ion-icon slot=\"start\" [name]=\"'accessibility-outline'\"></ion-icon>\r\n              <ion-label>\r\n                Personal\r\n              </ion-label>\r\n            </ion-item>\r\n            \r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/ubicacion'\">\r\n              <ion-icon slot=\"start\" name=\"map-sharp\"></ion-icon>\r\n              <ion-label>\r\n                Ubicación GPS\r\n              </ion-label>\r\n\r\n            </ion-item>\r\n            <ion-item [routerDirection]=\"'home'\" [routerLink]=\"'/mapa'\">\r\n              <ion-icon slot=\"start\" name=\"map-sharp\"></ion-icon>\r\n              <ion-label>\r\n                Google Maps\r\n              </ion-label>\r\n            </ion-item>\r\n\r\n            <ion-item (click)=\"salir()\" [routerDirection]=\"'home'\" [routerLink]=\"'/login'\">\r\n              <ion-icon slot=\"start\" name=\"log-out-outline\"></ion-icon>\r\n              <ion-label>\r\n                Cerrar sesion\r\n              </ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu> \r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n\r\n<!--\r\nCOMPONENT ORIGINAL \r\n<ion-app>\r\n  <ion-router-outlet></ion-router-outlet>\r\n</ion-app>\r\n-->";
 
 /***/ })
 

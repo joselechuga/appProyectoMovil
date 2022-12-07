@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar class="head">
-    <ion-title>JOJO APP</ion-title>
+    <ion-title id="Title">JOJO APP</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,6 +9,7 @@
   <div class="seccionchilds">
     <div class="imageninicio">
       <img src="../../assets/fondos/JoJosbizarre.png" alt="">
+      <h2>Jose</h2>
     </div>
     <ion-router-outlet></ion-router-outlet>
   </div>
@@ -18,7 +19,7 @@
     <ion-toolbar>
       <ion-segment value="inicio" (ionChange)="segmentChanged($event)">
 
-        <ion-segment-button value="login">
+        <ion-segment-button value="login" id="abre">
           <small>Login</small>  
           <ion-icon name="log-in-sharp"></ion-icon>
         </ion-segment-button>
