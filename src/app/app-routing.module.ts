@@ -92,7 +92,11 @@ const routes: Routes = [
   {
     path: 'prod-detail/:id',
     loadChildren: () => import('./prod-detail/prod-detail.module').then( m => m.ProdDetailPageModule)
+  },  {
+    path: 'agregar',
+    loadChildren: () => import('./agregar/agregar.module').then( m => m.AgregarPageModule)
   },
+
 
 
 
